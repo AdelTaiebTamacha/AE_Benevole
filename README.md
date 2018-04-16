@@ -4,7 +4,7 @@ Managment and help for the Benevoles of Airexpo air show
 
 ## Getting Started
 
-All right reserve to ENAC students.
+All right reserved to ENAC students.
 
 
 ### Platform
