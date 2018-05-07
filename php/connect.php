@@ -104,13 +104,13 @@ function login($login,$password) {
 	}
 } 
 	
+echo $_POST["login"];
+echo $_POST["password"];
+login("'".$_POST["login"]."'", $_POST["password"]);
 
-login("'Camile@gmail.com'", "Enac***");
-login("'Camille@gmail.com'", "Enac***");
-login("'Camille@gmail.com'", "Enac****");
-
-
-
+//login("'Camile@gmail.com'", "Enac***");
+//login("'Camille@gmail.com'", "Enac***");
+//login("'Camille@gmail.com'", "Enac****");
 	
 ?>
 
