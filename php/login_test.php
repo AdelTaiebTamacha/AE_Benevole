@@ -34,6 +34,7 @@
                     <div class="col-xs-8">
                         <div class="checkbox icheck">
                             <label>
+                                <input type="checkbox"> Remember Me
                                 <button type="submit" class="btn">Sign In</button>
                             </label>
                         </div>
@@ -46,6 +47,9 @@
                     <!-- /.col -->
                 </div>
             </form>
+            <div class="re_login">
+                <a href="login.php">I forgot my password</a>
+            </div>
 
         </div>
 
