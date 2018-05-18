@@ -1,6 +1,7 @@
 <?php
-    session_start();
+session_start();
 ?>
+
 
 <!DOCTYPE html>
 <!--
@@ -75,7 +76,7 @@ desired effect
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only" id="barre">Toggle navigation</span>
+        <span class="sr-only">Toggle navigation</span>
       </a>
       
       <!-- Navbar Right Menu -->
@@ -90,7 +91,7 @@ desired effect
               <!-- ON POURRA METTRE LE NUMERO DE L'EQUIPE SOUS FORME D'IMAGE ICI-->
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Bénévole A</span>
+              <span class="hidden-xs">Prenom Nom Bénévole A</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -99,7 +100,8 @@ desired effect
                 <img src="dist/img/user5-128x128.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                    Bénévole B
+                  Prenom Nom Bénévole B
+                  <small>Member since Nov. 2012</small>
                 </p>
               </li>
               </li>
@@ -131,7 +133,6 @@ desired effect
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
-
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
@@ -146,7 +147,7 @@ desired effect
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-map"></i> <span>Carte</span></a></li>
+        <li><a href="#"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li><a href="#"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
         <li><a href="#"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
         <li class="treeview">
@@ -171,15 +172,13 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Plan du Site
-        <small>Carte de l'aérodrome de Muret-Lherm</small>
+			Whatever
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content container-fluid">
-
-		<iframe src="https://www.google.com/maps/d/embed?mid=1K1wOsiHk0OhU5cQxT5eufs6VCHIyyNtd" width="100%" height="650"></iframe>
+		<b>COUCOU</b>
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
@@ -210,10 +209,6 @@ desired effect
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-
-<script type="text/javascript">
-    $("#barre").click();
-</script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
