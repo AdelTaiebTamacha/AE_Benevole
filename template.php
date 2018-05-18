@@ -3,7 +3,6 @@ session_start();
 ?>
 
 
-
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -77,7 +76,7 @@ desired effect
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only" id="barre">Toggle navigation</span>
       </a>
       
       <!-- Navbar Right Menu -->
@@ -92,7 +91,7 @@ desired effect
               <!-- ON POURRA METTRE LE NUMERO DE L'EQUIPE SOUS FORME D'IMAGE ICI-->
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Prenom Nom Bénévole A</span>
+              <span class="hidden-xs">Bénévole A</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -101,14 +100,13 @@ desired effect
                 <img src="dist/img/user5-128x128.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Prenom Nom Bénévole B
-                  <small>Member since Nov. 2012</small>
+                  Bénévole B
                 </p>
               </li>
               </li>
               <!-- Menu Footer-->
                 <div class="pull-center">
-                  <a href="#" class="btn btn-default btn-flat">Déconnexion</a>
+                  <a href="deconnect.php" class="btn btn-default btn-flat">Déconnexion</a>
                 </div>
               </li>
             </ul>
@@ -140,7 +138,7 @@ desired effect
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $_SESSION['prenom'].' '.$_SESSION['nom'] ?></p>
           <p><small>Bénévole Airexpo 2018</small></p>
         </div>
       </div>
@@ -210,6 +208,11 @@ desired effect
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+
+<script type="text/javascript">
+	$("#barre").click();
+</script>
+
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
