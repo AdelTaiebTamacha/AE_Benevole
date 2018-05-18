@@ -173,7 +173,18 @@ desired effect
       <h1>
         Plan du Site
         <small>Carte de l'aérodrome de Muret-Lherm</small>
+        <h5>
+            <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/select_pts_repere.css">
+            <select name="select">
+                <optgroup label ="Points de Repère">
+                    <option value ="1">Alpha 1</option>
+                    <option value="2">Alpha 2</option>
+                    <option value="3">Prendre les points de repère dans la bdd</option>
+                </optgroup>
+        </h5>
       </h1>
+
+        </select>
     </section>
 
     <!-- Main content -->
