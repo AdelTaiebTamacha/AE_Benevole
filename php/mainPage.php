@@ -64,7 +64,7 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>Eq.</b> X</span>
       <!-- logo for regular state and mobile devices -->
@@ -75,7 +75,7 @@ desired effect
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only" id="barre">Toggle navigation</span>
       </a>
       
       <!-- Navbar Right Menu -->
@@ -100,7 +100,6 @@ desired effect
 
                 <p>
                     Bénévole B
-                  <small>Member since Nov. 2012</small>
                 </p>
               </li>
               </li>
@@ -211,6 +210,10 @@ desired effect
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+
+<script type="text/javascript">
+    $("#barre").click();
+</script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
