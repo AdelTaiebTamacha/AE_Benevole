@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -86,7 +90,7 @@ desired effect
               <!-- ON POURRA METTRE LE NUMERO DE L'EQUIPE SOUS FORME D'IMAGE ICI-->
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Prenom Nom Bénévole A</span>
+              <span class="hidden-xs">Bénévole A</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -95,14 +99,14 @@ desired effect
                 <img src="dist/img/user5-128x128.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Prenom Nom Bénévole B
+                    Bénévole B
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
               </li>
               <!-- Menu Footer-->
                 <div class="pull-center">
-                  <a href="#" class="btn btn-default btn-flat">Déconnexion</a>
+                  <a href="deconnect.php" class="btn btn-default btn-flat">Déconnexion</a>
                 </div>
               </li>
             </ul>
@@ -135,7 +139,7 @@ desired effect
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $_SESSION['prenom'].' '.$_SESSION['nom'] ?></p>
           <p><small>Bénévole Airexpo 2018</small></p>
         </div>
       </div>
@@ -143,7 +147,7 @@ desired effect
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><i class="fa fa-map"></i> <span>Carte</span></a></li>
+        <li class="active"><a href="#"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li><a href="#"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
         <li><a href="#"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
         <li class="treeview">

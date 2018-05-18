@@ -33,22 +33,33 @@ function login($login,$password) {
 
 
     if (empty($donnee["email"])) {
-        echo "login errone";
-    }
+        echo "login errone".'<br/>';
+        echo '<a href="login.php">'."Essayer de se reconnecter".'</a>';
+
+
+}
     else{
         if ($donnee["password"] == $password) {
-            echo "mdp correct";
+//           echo '<a href = "mainPage.php" >'.'Lien 1'.'</a>';
+
+            // On démarre la session AVANT d'écrire du code HTML
+            session_start();
+            // On s'amuse à créer quelques variables de session dans $_SESSION
+            $_SESSION['prenom'] = $donnee["prenom"];
+            $_SESSION['nom'] = $donnee["nom"];
+
+            header('Location: mainPage.php');
         }
         else{
-            echo "mdp errone";
+            echo "mdp errone".'<br/>';
+            echo '<a href="login.php">'."Essayer de se reconnecter".'</a>';
         }
 
     }
 }
 
-echo $_POST["login"];
-echo $_POST["password"];
 login("'".$_POST["login"]."'", $_POST["password"]);
+
 
 ?>
 
