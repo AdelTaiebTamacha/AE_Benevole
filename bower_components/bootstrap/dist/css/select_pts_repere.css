@@ -1,0 +1,12 @@
+select {
+    text-align: center;
+    text-align-last: center;
+    text-width: ;
+    width: 200px;
+    position: relative;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 10px;
+}
