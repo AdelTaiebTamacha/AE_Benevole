@@ -183,10 +183,23 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
 }
-td,
+td {
+	border : 2px solid black;
+	height : 100%;
+	width : 100%;
+	background-color : lightblue;
+	
+}
 th {
+  position : relative;
   padding: 0;
 }
+tr  {
+	position : absolute;
+	height : 100%;
+	width : 100%;
+}
+
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
@@ -2258,7 +2271,7 @@ caption {
   text-align: left;
 }
 th {
-  text-align: left;
+  text-align: center;
 }
 .table {
   width: 100%;
