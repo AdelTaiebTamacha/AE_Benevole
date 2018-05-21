@@ -421,12 +421,8 @@ table {
     border-spacing: 0;
     width: 100%;
 }
+
+td,
 th {
     padding: 0;
 }
-tr {
-	width: 100%;
-}
-td {
-}
-

@@ -179,27 +179,26 @@ textarea {
 optgroup {
   font-weight: bold;
 }
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: 100%;
+.yenamarre {
+	border-collapse: collapse;
+	border: 2px solid black;
 }
-tbody {
+
+table {
+	border-collapse: collapse;
 	width: 100%;
 }
+tbody {
+
+}
 td {
-	border : 2px solid black;
-	height : 100%;
-	width : 600px;	
+	
 }
 th {
-  position : relative;
-  padding: 0;
+
 }
 tr  {
-	position : absolute;
-	height : 100%;
-	width : 100%;
+
 }
 
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
@@ -2265,6 +2264,7 @@ pre code {
 }
 table {
   background-color: transparent;
+  width: 100%;
 }
 caption {
   padding-top: 8px;

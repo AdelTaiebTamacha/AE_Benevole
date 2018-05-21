@@ -20,7 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Ionicons -->
   <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../dist/css/AdminLTE.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
@@ -170,32 +170,30 @@ desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        <b>Planning de la journée</b> 
+      <h1 style="padding-bottom:40px">
+        Planning de la journée
       </h1>
 
         </select>
     </section>
 
     <!-- Main content -->
-    <section class="content container-fluid">
-		
-		<div>
-    		<table>
-    			<tbody>
-					<tr>
-						<td>Horaires</td>
-						<td>Point de repère</td>
-						<td>Tache à effectuer</td>
+    <section>
+    
+    		<table style="width:100%;height:120px;padding:40px">
+    			<tbody style="background:lightblue">
+					<tr style="background:red; text-align:center">
+						<td style="width:15%; font-size:110%"><strong>Horaires</strong></td>
+						<td style="width:15%; font-size:110%"><strong>Point de repère</strong></td>
+						<td style="width:60%; font-size:110%"><strong>Tache à effectuer</strong></td>
 					</tr>
 					<tr>
-						<td>08:00 - 10:00</td>
-						<td>IC</td>
-						<td>Veiller aux abords de piste</td>
+						<td style="text-align:center; font-size:120%">08:00 - 10:00</td>
+						<td style="text-align:center; font-size:120%">IC</td>
+						<td style="padding:15px; font-size:120%">Veiller aux abords de piste</td>
 					</tr>
-				</tbody>			
+				</tbody>
 			</table>
-		</div>
 
     </section>
     <!-- /.content -->
