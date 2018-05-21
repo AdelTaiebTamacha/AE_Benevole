@@ -1,0 +1,1 @@
+INSERT INTO Benevole (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit) VALUES (0, Maruejol, Guilhem, 1998-06-24, France, Nimes, 30, Toulouse , 31400, guilhem.maruejol@gmail.com, airexpo18, Aucune, L, None, False, 0, 0, 0)

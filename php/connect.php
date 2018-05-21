@@ -17,14 +17,21 @@ function connect_PDO($server, $name, $login, $password){
 
 function login($login,$password) {
 
-    $conn = connect_PDO("localhost", "test", "root", "root");
-    $sql = "SELECT nom, prenom, email, password FROM essai WHERE email = ".$login;
-
+	$BDD_server = "localhost";
+	$BDD_name = "benevole_test";
+	$BDD_login = "root";
+	$BDD_password = "";
+	
+    $conn = connect_PDO($BDD_server, $BDD_name, $BDD_login, $BDD_password);
+    $sql = "SELECT nom, prenom, login, mdp FROM benevole WHERE login = ".$login;
+	//"SELECT nom, prenom, email, password FROM benevole";// WHERE login = ".$login;
+	
+	echo "connexion";
 
     try {
         $result = $conn->query($sql);
         $donnee = $result->fetch();
-        echo "<br/>".$donnee["email"]." - ".$donnee["password"]."<br>";
+        echo "<br/>".$donnee["login"]." - ".$donnee["mdp"]."<br>";
 
     }
     catch(Exception $e) {
@@ -32,14 +39,16 @@ function login($login,$password) {
     }
 
 
-    if (empty($donnee["email"])) {
+	echo "requete";
+	
+    if (empty($donnee["login"])) {
         echo "login errone".'<br/>';
         echo '<a href="login.php">'."Essayer de se reconnecter".'</a>';
 
 
 }
     else{
-        if ($donnee["password"] == $password) {
+        if ($donnee["mdp"] == $password) {
 //           echo '<a href = "mainPage.php" >'.'Lien 1'.'</a>';
 
             // On démarre la session AVANT d'écrire du code HTML
