@@ -188,13 +188,14 @@ desired effect
     </section>
 
     <!-- Main content -->
-    <section class="content container-fluid">
-
-		<iframe src="https://www.google.com/maps/d/embed?mid=1K1wOsiHk0OhU5cQxT5eufs6VCHIyyNtd" width="100%" height="650"></iframe>
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
-
+    <section>
+		
+		<p>
+			<map name="map_site" id="id_map_site">
+				<area shape="circle" coords="20, 10, 10" href="../php/planning.php" alt="vers a"/>
+      	<img src="../documents/Plan.png" height="600px" width="90%" usemap="map_site" alt="image">
+		</p>
+				
     </section>
     <!-- /.content -->
   </div>
