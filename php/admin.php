@@ -19,9 +19,50 @@
             </div>
         </div>
     </header>
+	
+	<?php
+	
+		function sql_request($sql) {
+			$servername = "localhost";
+			$username = "root";
+			$password = "";
+			$dbname = "benevole_test";
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			// Check connection
+			if ($conn->connect_error) {
+				die("Connection failed: " . $conn->connect_error);
+			} 
+
+			$result = $conn->query($sql);
+			return $result;
+		}
+	
+		
+	
+	
+	?>
 
 
     <body>
+	
+	
+		<script>
+			
+			function update_name(){
+				document.getElementById("demo").innerHTML = "Paragraph changed.";
+				
+			}
+			
+			
+			
+		</script>
+		
+		
+		
+		
+		
         <div>
             <p class="login-box-msg">Modification </p>
             <form method="post" action="bdd_modifier.php">
@@ -72,50 +113,49 @@
                     </div>
                 </div>
             </form>
-			<div style="width: 100%; height: 200px; overflow: auto; overflow-x: hidden;">
 			
-			<?php
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
-				$dbname = "benevole_test";
+			<p id="demo"> Helloword </p>
+			
+			
+			<div style="width: 100%; height: 100%; overflow: auto; overflow-x: hidden;">
+			
+				<?php
+					
+					$sql = "SELECT IdBenevole, Nom, Prenom, login, mdp FROM benevole";
+					//$sql = "SELECT IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit FROM benevole";
+					$result = sql_request($sql);
 
-				// Create connection
-				$conn = new mysqli($servername, $username, $password, $dbname);
-				// Check connection
-				if ($conn->connect_error) {
-					die("Connection failed: " . $conn->connect_error);
-				} 
-
-				$sql = "SELECT IdBenevole, Nom, Prenom, login, mdp FROM benevole";
-				$result = $conn->query($sql);
-
-				if ($result->num_rows > 0) {
-					echo "<table style='width: 100%'><tr><th>IdBenevole</th><th>Nom</th><th>Prenom</th><th>Login</th><th>Mdp</th></tr>";
-					// output data of each row
-					while($row = $result->fetch_assoc()) {
-						 
-						$line = "";
-						$line = $line."<tr><td>";
-						$line = $line.$row["IdBenevole"];
-						$line = $line."</td><td>";
-						$line = $line.$row["Nom"];
-						$line = $line."</td><td>";
-						$line = $line.$row["Prenom"];
-						$line = $line."</td><td>";
-						$line = $line.$row["login"];
-						$line = $line."</td><td>";
-						$line = $line.$row["mdp"];
-						$line = $line."</td><td>";
-						$line = $line.'<button type="button" onclick="document.getElementById('demo').innerHTML = Date()"> class="">Modifier</button>';
-						$line = $line."</td></tr>";
-						echo $line;
+					if ($result->num_rows > 0) {
+						
+						echo "<table style='width: 100%; height: 200%'><tr><th>IdBenevole</th><th>Nom</th><th>Prenom</th><th>Login</th><th>Mdp</th></tr>";
+						// output data of each row
+						
+						$counter = 0;
+						while($row = $result->fetch_assoc()) {
+							
+							$sep = "</td><td>";
+							$line = "";
+							$line = $line."<tr><td id='demo'>";
+							$line = $line.$row["IdBenevole"];
+							$line = $line.$sep;
+							$line = $line.$row["Nom"];
+							$line = $line.$sep;
+							$line = $line.$row["Prenom"];
+							$line = $line.$sep;
+							$line = $line.$row["login"];
+							$line = $line.$sep;
+							$line = $line.$row["mdp"];
+							$line = $line.$sep;
+							$line = $line.'<button type="button" onclick="update_name()" class="">Modifier</button>';
+							$line = $line."</td></tr>";
+							echo $line;
+						}
+						echo "</table>";
+						
+					} else {
+						echo "0 results";
 					}
-					echo "</table>";
-				} else {
-					echo "0 results";
-				}
-				$conn->close();
+					$conn->close();
 				?>
 			
 			</div>
