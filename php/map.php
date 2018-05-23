@@ -193,7 +193,7 @@ desired effect
 		<p>
 			<map name="map_site" id="id_map_site">
 				<area shape="circle" coords="20, 10, 10" href="../php/planning.php" alt="vers IA"/>
-      	<img src="../documents/Plan.png" height="80%" width="90%" usemap="map_site" alt="image">
+      	<img src="../documents/Plan_bis.png" height="650" width="800" usemap="map_site" alt="image">
 		</p>
 				
     </section>
