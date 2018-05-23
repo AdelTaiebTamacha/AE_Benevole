@@ -348,7 +348,7 @@ a:focus {
 .content-header > .breadcrumb > li + li:before {
   content: '>\00a0';
 }
-@media (max-width: 991px) {
+@media {
   .content-header > .breadcrumb {
     position: relative;
     margin-top: 5px;
@@ -1088,7 +1088,7 @@ a:focus {
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
   z-index: 5;
-  color: #fff;
+  color: #c43034;
   color: rgba(255, 255, 255, 0.8);
   font-size: 17px;
   margin-top: 10px;

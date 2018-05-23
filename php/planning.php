@@ -24,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="../dist/css/skins/skin-red.min.css">
+  <link rel="stylesheet" href="../dist/css/skins/skin-red.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,48 +66,17 @@ desired effect
     <!-- Logo -->
     <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Eq.</b> X</span>
+      <span class="logo-mini"><b>Eq.</b> $_SESSION["no_equipe"]</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Equipe</b> X</span>
+      <span class="logo-lg"><b>Equipe</b> $_SESSION["no_equipe"]</span>
     </a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" >
       <!-- Sidebar toggle button-->
-      <a data-toggle="push-menu" role="button">
-        <span class="sr-only" id="barre">Toggle navigation</span>
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
       </a>
-      
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a class="dropdown-toggle" data-toggle="dropdown" style="float: right">
-              <!-- The user image in the navbar-->
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image">
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                <img src="../documents/logoAE.png" width="7%">
-                <p>
-                    Bénévole B
-                </p>
-              </li>
-              </li>
-              <!-- Menu Footer-->
-                <div class="pull-center">
-                  <a href="deconnect.php" class="btn btn-default btn-flat" align="center">Déconnexion</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
     </nav>
   </header>
   
@@ -123,6 +92,8 @@ desired effect
         <li><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li class="active"><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
         <li><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
+        <li><a href="reperes.php"><i class="fa fa-file"></i> <span>CV des webmasters</span></a></li>
+		  <li><a href="deconnect.php"><i class="fa fa-circle"></i> <span>Déconnexion</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
             <span class="pull-right-container">
