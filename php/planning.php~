@@ -72,11 +72,8 @@ desired effect
     </a>
 
     <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only" id="barre">Toggle navigation</span>
-      </a>
+    <nav class="navbar navbar-static-top" position="fixed">
+
       
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
@@ -131,18 +128,6 @@ desired effect
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
-
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p><?php echo $_SESSION['prenom'].' '.$_SESSION['nom'] ?></p>
-          <p><small>Bénévole Airexpo 2018</small></p>
-        </div>
-      </div>
-
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
@@ -180,17 +165,19 @@ desired effect
     <!-- Main content -->
     <section>
     
-    		<table style="width:100%;height:120px;margin-left:40px">
-    			<tbody style="background:lightblue">
-					<tr style="background:red; text-align:center">
-						<td style="width:15%; font-size:110%"><strong>Horaires</strong></td>
-						<td style="width:15%; font-size:110%"><strong>Point de repère</strong></td>
-						<td style="width:60%; font-size:110%"><strong>Tache à effectuer</strong></td>
+    		<link rel="stylesheet" href="planning.css">
+    		<table>
+    		<!--style="width:100%;height:120px;margin-left:5px" -->
+    			<tbody>
+    				<tr>
+						<td><strong>Horaires</strong></td>
+						<td><strong>Point de repère</strong></td>
+						<td><strong>Tache à effectuer</strong></td>
 					</tr>
 					<tr>
-						<td style="text-align:center; font-size:120%">08:00 - 10:00</td>
-						<td style="text-align:center; font-size:120%"><a href="#" color="black">IC</a></td>
-						<td style="padding:15px; font-size:120%">Veiller aux abords de piste</td>
+						<td>08:00 - 10:00</td>
+						<td><a href="#">IC</a></td>
+						<td>Veiller aux abords de piste</td>
 					</tr>
 				</tbody>
 			</table>
