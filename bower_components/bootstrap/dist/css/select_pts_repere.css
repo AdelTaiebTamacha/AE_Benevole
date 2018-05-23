@@ -1,7 +1,6 @@
 select {
     text-align: center;
     text-align-last: center;
-    text-width: ;
     width: 200px;
     position: relative;
     padding-top: 1px;
@@ -10,3 +9,4 @@ select {
     padding-right: 2px;
     margin-left: 10px;
 }
+
