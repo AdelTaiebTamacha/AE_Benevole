@@ -91,7 +91,8 @@ desired effect
               <span class="hidden-xs" align="right"><img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image"></span>
             </a>
             <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
+              <!-- The user image
+               in the menu -->
               <li class="user-header">
                 <img src="../documents/logoAE.png" width="7%">
                 <p>
@@ -154,7 +155,7 @@ desired effect
     <!-- Main content -->
     <section>
     		<link rel="stylesheet" href="planning.css">
-    				<table>
+                <table style="border-spacing: 10px 15px">
     					<thead>
     						<tr>
 								<td><strong>Horaires</strong></td>
@@ -168,6 +169,26 @@ desired effect
 								<td><b>IC</b></td>
 							<td>Veiller aux abords de piste</td>
 							</tr>
+                            <tr>
+                                <td>10:00 - 12:00</td>
+                                <td><b>...</b></td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>12:00 - 14:00</td>
+                                <td><b>...</b></td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>14:00 - 16:00</td>
+                                <td><b>...</b></td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>16:00 - 18:00</td>
+                                <td><b>...</b></td>
+                                <td>...</td>
+                            </tr>
 						</tbody>
 					</table>
 
