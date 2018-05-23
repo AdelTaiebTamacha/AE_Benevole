@@ -9,6 +9,7 @@ lecture.insert_benevole_file(tableaubenevole)
 n1 = len(tableaubenevole)
 p1 = len(tableaubenevole[0])
 
+"""
 for i in range(1):#n1
     # ajout d'une voiture si le bénévole en possède une
     id_equipe_covoit = 1
@@ -29,3 +30,4 @@ for i in range(n2):
         Tache = tableaupostes[i][3]
         CoorLieu = str(i)
         lecture.insertLieu_file(CoorLieu, Nom, Tache)
+"""

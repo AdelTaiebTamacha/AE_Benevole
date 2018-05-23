@@ -59,8 +59,17 @@ def naissance(naiss):
     # pays, ville, département
     liste = naiss.split(", ")
     PaysNaiss = liste[0]
-    VilleNaiss = liste[1]
-    DepNaiss = round(float(liste[2]))
+    
+    if len(liste) == 3:
+        VilleNaiss = liste[1]
+        DepNaiss = round(float(liste[2]))
+    elif len(liste) == 2:
+        VilleNaiss = liste[1]
+        DepNaiss = "NR"
+    else:
+        VilleNaiss = "Etranger"
+        DepNaiss = "000"
+    
     return PaysNaiss, VilleNaiss, DepNaiss
 
 def preference(pref, i):
@@ -71,7 +80,12 @@ def preference(pref, i):
         
         
         
-        
+################################################################################
+#
+#                                Version Karigell
+#
+#
+################################################################################
 
 def insert_benevole(l):
     n = len(l)
@@ -216,30 +230,42 @@ def insert_benevole_file(l):
     
     n = len(l)
     request_file_path = "benevole.sql"
-    for i in range(1):#1,n
-        sql = "INSERT INTO Benevole (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        IdBenevole = i
-        Nom = l[i][2]
-        Prenom = l[i][3]
-        DateNaiss = l[i][4]
-        PaysNaiss, VilleNaiss, DepNaiss = naissance(l[i][5])
-        Adresse = l[i][12]
-        CodePostal = round(float(l[i][13]))
-        Login = l[i][1]
-        mdp = "airexpo18"
-        QualifAero = l[i][6]
-        Taille = l[i][7]
-        Covoiturage = boolean(l[i][11])
-        Airexpo17 = ancien(l[i][17])
-        Preference = preference(l[i][15], i)
-        NumEquipe = 0 #initialement
-        IdEquipeCovoit = 0 #initialement
-        para = (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit)
-
-        with open (request_file_path,'a') as f:
-            #Write in the file
-            
-            f.write(sql % para)
+    
+    with open (request_file_path,'a') as f:
+        for i in range(n):#1,n
+            try:
+                print(i)
+                #print(l[i])
+                sql = "INSERT INTO Benevole (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit) VALUES "
+                IdBenevole = str(i)
+                Nom = l[i][2]
+                Prenom = l[i][3]
+                
+                DateNaiss = l[i][4]
+                PaysNaiss, VilleNaiss, DepNaiss = naissance(l[i][5])
+                Adresse = l[i][12]
+                CodePostal = round(float(l[i][13]))
+                Login = l[i][1]
+                mdp = "airexpo18"
+                QualifAero = l[i][6]
+                Taille = l[i][7]
+                Covoiturage = boolean(l[i][11])
+                Airexpo17 = ancien(l[i][17])
+                Preference = preference(l[i][15], i)
+                NumEquipe = 0 #initialement
+                IdEquipeCovoit = 0 #initialement
+                para = [IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit]
+                
+                para = [str(ele) for ele in para]
+                para = ['"'+ IdBenevole + '", ' + Nom + '"',' " ' + Prenom + '", " ' + DateNaiss + '", " ' + PaysNaiss + '", " ' + VilleNaiss + '", " ' + DepNaiss + '", " ' + Adresse + '", " ' + CodePostal + '", " ' + Login + '", " ' + mdp + '", " ' + QualifAero + '", " ' + Taille + '", " ' + Covoiturage + '", " ' + Airexpo17 + '", " ' + Preference + '", " ' + NumEquipe + '", " ' + IdEquipeCovoit]
+                
+                print(para)
+                #Write in the file
+                
+                # f.write(sql + para + "\n")
+                
+            except Exception as err:
+                print(err)
 
 def insertResponsable_file(idBenevole):
     sql = "INSERT INTO Responsable VALUES (%s)"
@@ -280,7 +306,7 @@ def insertLieu_file(CoorLieu, Nom, Tache):
     with open (request_file_path,'a') as f:
             #Write in the file
             
-            f.write(sql % para)
+            f.write(sql % para + "\n")
 
 
 def insertCreneauHoraire_file(IdEquipe, CoorLieu, HDebut, HFin):

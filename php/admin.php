@@ -107,7 +107,7 @@
 						$line = $line."</td><td>";
 						$line = $line.$row["mdp"];
 						$line = $line."</td><td>";
-						$line = $line.'<button type="button" class="">Modifier</button>';
+						$line = $line.'<button type="button" onclick="document.getElementById('demo').innerHTML = Date()"> class="">Modifier</button>';
 						$line = $line."</td></tr>";
 						echo $line;
 					}
