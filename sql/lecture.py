@@ -233,13 +233,12 @@ def insert_benevole_file(l):
     request_file_path = "benevole.sql"
     
     with open (request_file_path,'w') as file:
-        file.write("USE Benevole\n")
-        sql = "INSERT INTO Benevole (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit) VALUES "
+        sql = "INSERT INTO Benevole (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit) VALUES \n"
             
         file.write(sql)
         for i in range(n):#1,n
             # print(i)
-            #print(l[i])
+            print(l[i])
             IdBenevole = i+1
             Nom = l[i][2]
             Prenom = l[i][3]
@@ -247,7 +246,6 @@ def insert_benevole_file(l):
             DateNaiss = l[i][4]
             PaysNaiss, VilleNaiss, DepNaiss = naissance(l[i][5])
             Adresse = l[i][12]
-            print(l[i][13])
             CodePostal = int(float(l[i][13])) if l[i][13]!="" else ""
             
             Login = l[i][1]
@@ -256,9 +254,11 @@ def insert_benevole_file(l):
             QualifAero = l[i][6]
             Taille = l[i][7]
             Covoiturage = boolean(l[i][11])
-            Airexpo17 = ancien(l[i][17])
+            Airexpo17 = ancien(l[i][18])
             Preference = preference(l[i][15], i)
-            NumEquipe = 0 #initialement
+            NumEquipe = l[i][17] #initialement
+            print(l[i][18])
+            
             IdEquipeCovoit = 0 #initialement
             para = [IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit]
             
@@ -269,7 +269,7 @@ def insert_benevole_file(l):
             for ele in para[1:]:
                 para2+= s + ele
             para2+= '")'
-            print(para2)
+            # print(para2)
             
             
             #Write in the file
@@ -487,7 +487,7 @@ def insert_benevole_data(l):
             Covoiturage = boolean(l[i][11])
             Airexpo17 = ancien(l[i][17])
             Preference = preference(l[i][15], i)
-            NumEquipe = 0 #initialement
+            NumEquipe = l[i][17] #initialement
             IdEquipeCovoit = 0 #initialement
             para = [IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit]
             
