@@ -25,11 +25,21 @@ lecture.insertEquipe_file(tableauequipe)
 lecture.insertEquipe_data(tableauequipe)
 #"""
 
+""" Postes
 filelieu = "Postes.xlsx"
 tableaulieu = lecture.lecteur(filelieu)
 
 # lecture.insertLieu_file(tableaulieu)
 lecture.insertLieu_data(tableaulieu)
+#"""
+
+
+filehoraire = "creneauhoraire.xlsx"
+tableauhoraire = lecture.lecteur(filehoraire)
+
+lecture.insertCreneauHoraire_file(tableauhoraire)
+
+
 
 """
 n1 = len(tableaubenevole)
