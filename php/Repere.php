@@ -150,15 +150,11 @@ desired effect
                 <li><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
                 <li><a href="Repere.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
                 <li class="treeview">
-                    <a href="../infos.php"><i class="fa fa-bell"></i> <span>Informations</span>
+                    <a href="infos.php"><i class="fa fa-bell"></i> <span>Informations</span>
                         <span class="pull-right-container">
             	<i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Programmation avions</a></li>
-                        <li><a href="#">En direct</a></li>
-                    </ul>
                 </li>
             </ul>
             <!-- /.sidebar-menu -->
@@ -180,7 +176,7 @@ desired effect
             <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/select_pts_repere.css">
             <div class="row">
                 <div class="col-md-4 col-xs-12">
-            <section id="reperes">
+            <section>
                 <table class="table" data-toggle="table"   data-search="true" 
                        data-pagination="true"  data-page-size="3">
                     <thead>

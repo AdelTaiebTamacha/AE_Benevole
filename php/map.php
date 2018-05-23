@@ -124,15 +124,11 @@ desired effect
         <li><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
         <li><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
+          <a href="infos.php"><i class="fa fa-bell"></i> <span>Informations</span>
             <span class="pull-right-container">
             	<i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Programmation avions</a></li>
-            <li><a href="#">En direct</a></li>
-          </ul>
         </li>
       </ul>
       <!-- /.sidebar-menu -->

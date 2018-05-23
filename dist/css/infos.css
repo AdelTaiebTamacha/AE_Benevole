@@ -1,0 +1,13 @@
+table, th, tr, td
+{
+    border: 1px solid black;
+    text-align:center; /* Tous les textes des cellules seront centrés*/
+    padding:5px; /* Petite marge intérieure aux cellules pour éviter que le texte touche les bordures */
+    /*margin-left: 27.5%;*/
+}
+
+section
+{
+    text-align:center;
+    padding:auto;
+}

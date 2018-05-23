@@ -1,41 +1,15 @@
-table
-{
-	background-color: red;
-}
-
-thead
-{
-	background-color: blue;
-}
-
-tbody
-{
-	background-color: green;
-}
-
-td
-{
-	border: 2px solid black;
-}
-
-tr
-{
-	border: 2px;
-}
-
-div
-{
-	
-}
-.row
-{
-	margin-left: 2%;
-	margin-right: 2%;
-}
-
-.table
+table, thead
 {
 	border-collapse: collapse;
-	width: 96%;
+	border: 3px solid black;
+	width: 93%;
+	position: relative;
 	margin-left: 2%;
+  text-align: center;
+}
+
+td {
+    border-collapse: collapse;
+    margin: auto;
+    border-width: 1px;
 }
