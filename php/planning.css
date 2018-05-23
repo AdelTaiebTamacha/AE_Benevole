@@ -1,9 +1,41 @@
 table
 {
-	border-collapse: collapse;
+	background-color: red;
+}
+
+thead
+{
+	background-color: blue;
+}
+
+tbody
+{
+	background-color: green;
+}
+
+td
+{
 	border: 2px solid black;
-	width: 96%;
-	position: relative;
+}
+
+tr
+{
+	border: 2px;
+}
+
+div
+{
+	
+}
+.row
+{
 	margin-left: 2%;
-		
+	margin-right: 2%;
+}
+
+.table
+{
+	border-collapse: collapse;
+	width: 96%;
+	margin-left: 2%;
 }
