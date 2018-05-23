@@ -14,13 +14,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>Bénévolat Airexpo</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../dist/css/AdminLTE.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
@@ -146,8 +146,8 @@ desired effect
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-map"></i> <span>Carte</span></a></li>
-        <li><a href="#"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
+        <li><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
+        <li class="active"><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
         <li><a href="#"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
@@ -170,30 +170,30 @@ desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Plan du Site
-        <small>Carte de l'aérodrome de Muret-Lherm</small>
-        <h5>
-            <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/select_pts_repere.css">
-            <select name="select">
-                <optgroup label ="Points de Repère">
-                    <option value ="1">Alpha 1</option>
-                    <option value="2">Alpha 2</option>
-                    <option value="3">Prendre les points de repère dans la bdd</option>
-                </optgroup>
-        </h5>
+      <h1 style="padding-bottom:40px">
+        Planning de la journée
       </h1>
 
         </select>
     </section>
 
     <!-- Main content -->
-    <section class="content container-fluid">
-
-		<iframe src="https://www.google.com/maps/d/embed?mid=1K1wOsiHk0OhU5cQxT5eufs6VCHIyyNtd" width="100%" height="650"></iframe>
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
+    <section>
+    
+    		<table style="width:100%;height:120px;margin-left:40px">
+    			<tbody style="background:lightblue">
+					<tr style="background:red; text-align:center">
+						<td style="width:15%; font-size:110%"><strong>Horaires</strong></td>
+						<td style="width:15%; font-size:110%"><strong>Point de repère</strong></td>
+						<td style="width:60%; font-size:110%"><strong>Tache à effectuer</strong></td>
+					</tr>
+					<tr>
+						<td style="text-align:center; font-size:120%">08:00 - 10:00</td>
+						<td style="text-align:center; font-size:120%"><a href="#" color="black">IC</a></td>
+						<td style="padding:15px; font-size:120%">Veiller aux abords de piste</td>
+					</tr>
+				</tbody>
+			</table>
 
     </section>
     <!-- /.content -->
