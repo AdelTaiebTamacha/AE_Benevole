@@ -368,7 +368,41 @@ def insertLieu_file(table):
                 para2+= '")'
                 print(para2)
             
-                file.write(para2 + ",\n")            
+                file.write(para2 + ",\n")        
+
+                
+def insertCreneauHoraire_file(table):
+    
+    request_file_path = "creneau.sql"
+    creneau = ["10:00", "12:00", "14:00", "16:00", "18:00"]
+    
+    with open (request_file_path,'a') as file:
+        file.write("INSERT INTO CreneauHoraire (IdEquipe, CoorLieu, HDebut, HFin) VALUES\n")
+        
+        
+        
+        
+        for i in range(len(table)):
+            print(table[i])
+            
+            
+            CoorLieu = table[i][0]
+            for j in [0,1,2,3]:
+                IdEquipe = table[i][j]
+                HDebut = creneau[j]
+                HFin = creneau[j+1]
+                para = [IdEquipe, CoorLieu, HDebut, HFin]
+                
+                s = '", "'
+                para = [str(ele) for ele in para]
+                
+                para2 = '("' + para[0]
+                for ele in para[1:]:
+                    para2+= s + ele
+                para2+= '")'
+                print(para2)
+            
+                file.write(para2 + ",\n")  
 
 def insertResponsable_file(idBenevole):
     sql = "INSERT INTO Responsable VALUES (%s)"
@@ -395,15 +429,7 @@ def insertMateriel_file(Materiel, IdResponsable):
 
 
 
-def insertCreneauHoraire_file(IdEquipe, CoorLieu, HDebut, HFin):
-    sql = "INSERT INTO CreneauHoraire VALUES (%s, %s, %s, %s)"
-    para = (IdEquipe, CoorLieu, HDebut, HFin)
-    request_file_path = "creneay.sql"
-    
-    with open (request_file_path,'a') as f:
-            #Write in the file
-            
-            f.write(sql % para)
+
 
 
          
