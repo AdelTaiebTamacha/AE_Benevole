@@ -5,8 +5,12 @@ select {
     position: relative;
     padding-top: 1px;
     padding-bottom: 1px;
-    padding-left: 2px;
+    padding-left: 5px;
     padding-right: 2px;
     margin-left: 10px;
+    font-size: 15px;
 }
 
+.repere {
+    color: #b9ca4a;
+}

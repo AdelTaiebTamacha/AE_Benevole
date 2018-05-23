@@ -173,15 +173,49 @@ desired effect
       <h1>
         Plan du Site
         <small>Carte de l'aérodrome de Muret-Lherm</small>
-        <h5>
             <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/select_pts_repere.css">
-            <select name="select">
+
+          <select name="select">
                 <optgroup label ="Points de Repère">
-                    <option value ="1">Alpha 1</option>
-                    <option value="2">Alpha 2</option>
-                    <option value="3">Prendre les points de repère dans la bdd</option>
+                    <option value="7E">AA</option>
+                    <option value="6F">EV</option>
+                    <option value="5B">HA</option>
+                    <option value="4B">HB</option>
+                    <option value="7B">IA</option>
+                    <option value="7C">IB</option>
+                    <option value="7C">IC</option>
+                    <option value="7D">ID</option>
+                    <option value="7E">IE</option>
+                    <option value="7F">IF</option>
+                    <option value="7G">IG</option>
+                    <option value="7J">IH</option>
+                    <option value="4E">NA</option>
+                    <option value="4D">NB</option>
+                    <option value="5E">NC</option>
+                    <option value="4E">ND</option>
+                    <option value="4E">NE</option>
+                    <option value="5G">PZ</option>
+                    <option value="4F">RA</option>
+                    <option value="5H">RB</option>
+                    <option value="6I">RC</option>
+                    <option value="6I">RD</option>
+                    <option value="7N">RE</option>
+                    <option value="2O">RF</option>
+                    <option value="6F">SA</option>
+                    <option value="6D">SB</option>
+                    <option value="6C">SC</option>
+                    <option value="6C">SD</option>
+                    <option value="7C">SE</option>
+                    <option value="6D">SF</option>
+                    <option value="6E">SG</option>
+                    <option value="7E">VD</option>
+                    <option value="7D">ZT</option>
+                    <option value="7F">ZV</option>
                 </optgroup>
-        </h5>
+              <script type="text/javascript">
+                  $("#select").click();
+                  <?php echo $_POST["select"] ?>
+              </script>
       </h1>
 
         </select>
@@ -191,11 +225,16 @@ desired effect
     <section>
 		
 		<p>
-			<map name="map_site" id="id_map_site">
-				<area shape="circle" coords="20, 10, 10" href="../php/planning.php" alt="vers IA"/>
-      	<img src="../documents/Plan.png" height="80%" width="90%" usemap="map_site" alt="image">
+        <div class = "row">
+          <div class = "col-xs-12">
+            <map name="map_site" id="id_map_site">
+                <area shape="circle" coords="20, 10, 10" href="../php/planning.php" alt="vers IA"/>
+                <img src="../documents/Site_quadrille.png" height="80%" width="90%" usemap="map_site" alt="image">
+            </map>
+        </div>
+        </div>
 		</p>
-				
+
     </section>
     <!-- /.content -->
   </div>
