@@ -180,7 +180,7 @@ desired effect
             <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/select_pts_repere.css">
             <div class="row">
                 <div class="col-md-4 col-xs-12">
-            <section id="reperes">
+            <section>
                 <table class="table" data-toggle="table"   data-search="true" 
                        data-pagination="true"  data-page-size="3">
                     <thead>
