@@ -1,7 +1,6 @@
 <?php
-session_start();
+    session_start();
 ?>
-
 
 <!DOCTYPE html>
 <!--
@@ -10,33 +9,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bénévolat Airexpo</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect. -->
-    <link rel="stylesheet" href="../dist/css/skins/skin-red.min.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Bénévolat Airexpo</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/AdminLTE.css">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
+  <link rel="stylesheet" href="../dist/css/skins/skin-red.css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-    <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -61,124 +60,104 @@ desired effect
 <body class="hold-transition skin-red sidebar-mini">
 <div class="wrapper">
 
-    <!-- Main Header -->
-    <header class="main-header">
+  <!-- Main Header -->
+  <header class="main-header">
 
-        <!-- Logo -->
-        <a href="index2.html" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>Eq.</b> X</span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Equipe</b> X</span>
-        </a>
+    <!-- Logo -->
+    <a class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>Eq.</b> X</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Equipe</b> X</span>
+    </a>
 
-        <!-- Header Navbar -->
-        <nav class="navbar navbar-static-top" role="navigation">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only" id="barre">Toggle navigation</span>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" >
+      <!-- Sidebar toggle button-->
+      <a data-toggle="push-menu" role="button">
+        <span class="sr-only" id="barre">Toggle navigation</span>
+      </a>
+      
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a class="dropdown-toggle" data-toggle="dropdown" style="float: right">
+              <!-- The user image in the navbar-->
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs" align="right"><img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image"></span>
             </a>
-
-            <!-- Navbar Right Menu -->
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-
-                    <!-- User Account Menu -->
-                    <li class="dropdown user user-menu">
-                        <!-- Menu Toggle Button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <!-- The user image in the navbar-->
-                            <!-- ON POURRA METTRE LE NUMERO DE L'EQUIPE SOUS FORME D'IMAGE ICI-->
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Bénévole A</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- The user image in the menu -->
-                            <!-- ON POURRA METTRE LE NUMERO DE L'EQUIPE SOUS FORME D'IMAGE ICI-->
-                            <li class="user-header">
-                                <img src="dist/img/user5-128x128.jpg" class="img-circle" alt="User Image">
-
-                                <p>
-                                    Bénévole B
-                                </p>
-                            </li>
-                            </li>
-                            <!-- Menu Footer-->
-                            <div class="pull-center">
-                                <a href="deconnect.php" class="btn btn-default btn-flat">Déconnexion</a>
-                            </div>
-                            </li>
-                        </ul>
-                        <!-- search form (Optional) -->
-                        <form action="#" method="get" class="sidebar-form">
-                            <div class="input-group">
-                                <input type="text" name="q" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-            	  			<button type="submit-left" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-            			</span>
-                            </div>
-                        </form>
-                        <!-- /.search form -->
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="../documents/logoAE.png" width="7%">
+                <p>
+                    Bénévole B
+                </p>
+              </li>
+              </li>
+              <!-- Menu Footer-->
+                <div class="pull-center">
+                  <a href="deconnect.php" class="btn btn-default btn-flat" align="center">Déconnexion</a>
                 </div>
-                <div class="pull-left info">
-                    <p><?php echo $_SESSION['prenom'].' '.$_SESSION['nom'] ?></p>
-                    <p><small>Bénévole Airexpo 2018</small></p>
-                </div>
-            </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
 
-            <!-- Sidebar Menu -->
-            <ul class="sidebar-menu" data-widget="tree">
-                <!-- Optionally, you can add icons to the links -->
-                <li><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
-                <li><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
-                <li><a href="Repere.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
-                <li class="treeview">
-                    <a href="infos.php"><i class="fa fa-bell"></i> <span>Informations</span>
-                        <span class="pull-right-container">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <!-- Optionally, you can add icons to the links -->
+        <li><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
+        <li><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
+        <li class="active"><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
+            <span class="pull-right-container">
             	<i class="fa fa-angle-left pull-right"></i>
             </span>
-                    </a>
-                </li>
-            </ul>
-            <!-- /.sidebar-menu -->
-        </section>
-        <!-- /.sidebar -->
-    </aside>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Programmation avions</a></li>
+            <li><a href="#">En direct</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-               Liste des Points de Repère
-            </h1>
-        </section>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1 style="padding-bottom:40px">
+        Liste des points de repère
+      </h1>
 
-        <!-- Main content -->
-        <section class="content container-fluid">
-            <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/select_pts_repere.css">
-            <div class="row">
-                <div class="col-md-4 col-xs-12">
-            <section>
-                <table class="table" data-toggle="table"   data-search="true" 
-                       data-pagination="true"  data-page-size="3">
+        </select>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <link rel="stylesheet" href="select_pts_repere.css">
+        <div class="row">
+            <div class="col-md-4 col-xs-12">
+            <section id="reperes">
+                <table class="table" data-toggle="table"  data-search="true" data-pagination="true"  data-page-size="3">
                     <thead>
                     <tr>
                         <th data-field="col1" data-sortable="true">Points de repère</th>
@@ -336,22 +315,19 @@ desired effect
                     </b>
                 </div>
             </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
-
-        </section>
-        <!-- /.content -->
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      <a href="http://airexpo.org/">Airexpo</a>
     </div>
-    <!-- /.content-wrapper -->
-
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            <a href="http://airexpo.org/">Airexpo</a>
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
-    </footer>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2016 <a href="http://airexpo.org">Company</a>.</strong> All rights reserved.
+  </footer>
 
 </div>
 <!-- ./wrapper -->
@@ -368,7 +344,6 @@ desired effect
 <script type="text/javascript">
     $("#barre").click();
 </script>
-
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

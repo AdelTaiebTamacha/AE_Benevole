@@ -24,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="../dist/css/skins/skin-red.min.css">
+  <link rel="stylesheet" href="../dist/css/skins/skin-red.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -64,18 +64,18 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Eq.</b> X</span>
+      <span class="logo-mini"><b>Eq.</b> $_SESSION["no_equipe"]</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Equipe</b> X</span>
+      <span class="logo-lg"><b>Equipe</b> $_SESSION["no_equipe"]</span>
     </a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" >
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only" id="barre">Toggle navigation</span>
+        <span class="sr-only">Toggle navigation</span>
       </a>
       
       <!-- Navbar Right Menu -->
@@ -87,38 +87,24 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <!-- ON POURRA METTRE LE NUMERO DE L'EQUIPE SOUS FORME D'IMAGE ICI-->
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Bénévole A</span>
+              <img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image">
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
-              <!-- ON POURRA METTRE LE NUMERO DE L'EQUIPE SOUS FORME D'IMAGE ICI-->
               <li class="user-header">
-                <img src="dist/img/user5-128x128.jpg" class="img-circle" alt="User Image">
-
+                <img src="../documents/logoAE.png" width="7%">
                 <p>
-                    Bénévole B
+                    $_SESSION["Prénom"] $_SESSION["nom"]
                 </p>
               </li>
               </li>
               <!-- Menu Footer-->
                 <div class="pull-center">
-                  <a href="deconnect.php" class="btn btn-default btn-flat">Déconnexion</a>
+                  <a href="deconnect.php" class="btn btn-default btn-flat" align="center">Déconnexion</a>
                 </div>
               </li>
             </ul>
-            <!-- search form (Optional) -->
-				<form action="#" method="get" class="sidebar-form">
-      			<div class="input-group">
-         			<input type="text" name="q" class="form-control" placeholder="Search...">
-          				<span class="input-group-btn">
-            	  			<button type="submit-left" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-            			</span>
-        			</div>
-      		</form>
-				<!-- /.search form -->
           </li>
         </ul>
       </div>
@@ -136,7 +122,9 @@ desired effect
         <!-- Optionally, you can add icons to the links -->
         <li><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li class="active"><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
-        <li><a href="#"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
+        <li><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
+        <li><a href="reperes.php"><i class="fa fa-file"></i> <span>CV des webmasters</span></a></li>
+		  <li><a href="deconnect.php"><i class="fa fa-circle"></i> <span>Déconnexion</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
             <span class="pull-right-container">
@@ -167,23 +155,27 @@ desired effect
 
     <!-- Main content -->
     <section>
-    
-    		<link rel="stylesheet" href="planning.css">
-    		<table>
-    			<tbody>
-    				<tr>
-						<td><strong>Horaires</strong></td>
-						<td><strong>Point de repère</strong></td>
-						<td><strong>Tache à effectuer</strong></td>
-					</tr>
-					<tr>
-						<td>08:00 - 10:00</td>
-						<td><a onclick="cartouche()">IC</a></td>
-							<div id="IC">Zone E5</div>
-						<td>Veiller aux abords de piste</td>
-					</tr>
-				</tbody>
-			</table>
+        <link rel="stylesheet" href="select_pts_repere.css">
+        <div class="row">
+            <div class="col-md-4 col-xs-12">
+            <section id="reperes">
+                <table class="table" data-toggle="table"  data-search="true" data-pagination="true"  data-page-size="3">
+                    <thead>
+                    <tr>
+                        <th data-field="col1" data-sortable="true">Horaires</th>
+                        <th data-field="col2" data-sortable="true">Point de repère</th>
+                        <th data-field="col3" data-sortable="true">Tache à effectuer</th>
+                    </tr>
+                    </thead>
+						</thead>
+						<tbody>
+							<tr>
+								<td>08:00 - 10:00</td>
+								<td><b>IC</b></td>
+							<td>Veiller aux abords de piste</td>
+							</tr>
+						</tbody>
+					</table>
 
     </section>
     <!-- /.content -->
@@ -197,7 +189,7 @@ desired effect
       <a href="http://airexpo.org/">Airexpo</a>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2016 <a href="http://airexpo.org">Company</a>.</strong> All rights reserved.
   </footer>
 
 </div>

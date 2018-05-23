@@ -14,17 +14,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>Bénévolat Airexpo</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../dist/css/AdminLTE.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="../dist/css/skins/skin-red.min.css">
+  <link rel="stylesheet" href="../dist/css/skins/skin-red.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -64,7 +64,7 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>Eq.</b> X</span>
       <!-- logo for regular state and mobile devices -->
@@ -72,9 +72,9 @@ desired effect
     </a>
 
     <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
+    <nav class="navbar navbar-static-top" >
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <a data-toggle="push-menu" role="button">
         <span class="sr-only" id="barre">Toggle navigation</span>
       </a>
       
@@ -85,19 +85,15 @@ desired effect
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" style="float: right">
               <!-- The user image in the navbar-->
-              <!-- ON POURRA METTRE LE NUMERO DE L'EQUIPE SOUS FORME D'IMAGE ICI-->
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Bénévole A</span>
+              <span class="hidden-xs" align="right"><img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image"></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
-              <!-- ON POURRA METTRE LE NUMERO DE L'EQUIPE SOUS FORME D'IMAGE ICI-->
               <li class="user-header">
-                <img src="dist/img/user5-128x128.jpg" class="img-circle" alt="User Image">
-
+                <img src="../documents/logoAE.png" width="7%">
                 <p>
                     Bénévole B
                 </p>
@@ -105,20 +101,10 @@ desired effect
               </li>
               <!-- Menu Footer-->
                 <div class="pull-center">
-                  <a href="deconnect.php" class="btn btn-default btn-flat">Déconnexion</a>
+                  <a href="deconnect.php" class="btn btn-default btn-flat" align="center">Déconnexion</a>
                 </div>
               </li>
             </ul>
-            <!-- search form (Optional) -->
-				<form action="#" method="get" class="sidebar-form">
-      			<div class="input-group">
-         			<input type="text" name="q" class="form-control" placeholder="Search...">
-          				<span class="input-group-btn">
-            	  			<button type="submit-left" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-            			</span>
-        			</div>
-      		</form>
-				<!-- /.search form -->
           </li>
         </ul>
       </div>
@@ -131,34 +117,18 @@ desired effect
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
-
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p><?php echo $_SESSION['prenom'].' '.$_SESSION['nom'] ?></p>
-          <p><small>Bénévole Airexpo 2018</small></p>
-        </div>
-      </div>
-
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
-        <li><a href="Repere.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
+        <li><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
+          <a href="infos.php"><i class="fa fa-bell"></i> <span>Informations</span>
             <span class="pull-right-container">
             	<i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Programmation avions</a></li>
-            <li><a href="#">En direct</a></li>
-          </ul>
         </li>
       </ul>
       <!-- /.sidebar-menu -->
