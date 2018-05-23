@@ -170,7 +170,6 @@ desired effect
     
     		<link rel="stylesheet" href="planning.css">
     		<table>
-    		<!--style="width:100%;height:120px;margin-left:5px" -->
     			<tbody>
     				<tr>
 						<td><strong>Horaires</strong></td>
@@ -179,7 +178,8 @@ desired effect
 					</tr>
 					<tr>
 						<td>08:00 - 10:00</td>
-						<td><a href="#">IC</a></td>
+						<td><a href="#" onclick="cartouche()">IC</a></td>
+							<div id="IC">Zone E5</div>
 						<td>Veiller aux abords de piste</td>
 					</tr>
 				</tbody>
