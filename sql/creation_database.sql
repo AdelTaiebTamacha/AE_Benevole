@@ -1,4 +1,3 @@
-DROP DATABASE essai;
 
 CREATE DATABASE essai;
 
