@@ -1,4 +1,4 @@
-INSERT INTO Equipe VALUES (IdEquipe, IdResponsable, CoorLieu)
+INSERT INTO Equipe (IdEquipe, IdResponsable, CoorLieu) VALUES
 ("1", "0", ""),
 ("2", "3", ""),
 ("4", "10", ""),

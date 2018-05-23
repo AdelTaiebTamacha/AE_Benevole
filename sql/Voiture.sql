@@ -1,4 +1,4 @@
-INSERT INTO Voiture VALUES (Plaque, NbPlace, IdBenevole, IdEquipeCovoit)
+INSERT INTO Voiture (Plaque, NbPlace, IdBenevole, IdEquipeCovoit) VALUES 
 ("EJ971FY", "5", "0", "2"),
 ("CK-958-WM", "5", "2", "3"),
 ("", "5", "3", "4"),

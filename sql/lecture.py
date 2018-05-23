@@ -251,7 +251,7 @@ def insert_benevole_file(l):
             CodePostal = int(float(l[i][13])) if l[i][13]!="" else ""
             
             Login = l[i][1]
-            mdp = "airexpo18"
+            mdp = l[i][4]
             
             QualifAero = l[i][6]
             Taille = l[i][7]
@@ -284,7 +284,7 @@ def insertEquipe_file(table):
     
     with open (request_file_path,'w') as file:
     
-        file.write("INSERT INTO Equipe VALUES (IdEquipe, IdResponsable, CoorLieu)\n")
+        file.write("INSERT INTO Equipe (IdEquipe, IdResponsable, CoorLieu) VALUES\n")
         NbMembre = 3
         
         for i in range(len(table)):
@@ -314,7 +314,7 @@ def insertVoiture_file(table):
     
     with open (request_file_path,'w') as file:
     
-        file.write("INSERT INTO Voiture VALUES (Plaque, NbPlace, IdBenevole, IdEquipeCovoit)\n")
+        file.write("INSERT INTO Voiture (Plaque, NbPlace, IdBenevole, IdEquipeCovoit) VALUES\n")
         IdEquipeCovoit = 1
         
         for i in range(len(table)):
@@ -345,7 +345,7 @@ def insertLieu_file(table):
     request_file_path = "lieu.sql"
     
     with open (request_file_path,'a') as file:
-        file.write("INSERT INTO Lieu VALUES (CoorLieu, Nom, Tache) \n")
+        file.write("INSERT INTO Lieu (CoorLieu, Nom, Tache) VALUES\n")
         
         
         

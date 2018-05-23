@@ -1,5 +1,5 @@
-USE Benevole
-INSERT INTO Benevole (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit) VALUES ("1", "Maruejol", "Guilhem", "1998-06-24", "France", "Nimes", "30", "Toulouse ", "31400", "guilhem.maruejol@gmail.com", "airexpo18", "Aucune", "L", "-1", "0", "0", "0", "0"),
+INSERT INTO Benevole (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit) VALUES 
+("1", "Maruejol", "Guilhem", "1998-06-24", "France", "Nimes", "30", "Toulouse ", "31400", "guilhem.maruejol@gmail.com", "airexpo18", "Aucune", "L", "-1", "0", "0", "0", "0"),
 ("2", "Nguyen Tri", "Thuc", "1991-10-09", "Vietnam", "Ho chi minh ville", "99", "Toulouse", "31400", "trithuc910@gmail.com", "airexpo18", "", "L", "1", "0", "1", "0", "0"),
 ("3", "Chardin", "Alexandre", "1995-11-13", "France", "St Sébastien Sur Loire", "44", "Toulouse", "31400", "alexandre.chardin@free.fr", "airexpo18", "Aucune", "M", "-1", "0", "0", "0", "0"),
 ("4", "Plumier", "Louis", "1998-01-28", "France", "Nantes", "44", "Toulouse ", "31055", "louisplumier@sfr.fr", "airexpo18", "Aucune", "M", "1", "0", "0", "0", "0"),
@@ -151,5 +151,4 @@ INSERT INTO Benevole (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss,
 ("150", "Bechade", "Antoine", "2018-05-24", "France", "Villeneuve saint Georges", "94", "Toulouse", "31500", "antoinebechade94@gmail.com", "airexpo18", "", "XS", "1", "0", "149", "0", "0"),
 ("151", "COMPAYRE", "FREDERIC", "2018-05-20", "France", "Mont de Marsan", "40", "", "", "fredcpe@hotmail.fr", "airexpo18", "Mécanicien Mirage 2000", "XXL", "0", "0", "150", "0", "0"),
 ("152", "Burgio", "Séverine", "2000-09-15", "France", "Toulouse", "31", "Toulouse", "31300", "severine.burgio@gmail.com", "airexpo18", "BIA en cours", "L", "-1", "0", "151", "0", "0"),
-("153", "Peegel", "Kertu", "1997-07-30", "Eesti", "Tallinn", "99", "Toulouse", "31400", "kpeegel@gmail.com", "airexpo18", "Aucune", "L", "1", "0", "0", "0", "0"),
-;
+("153", "Peegel", "Kertu", "1997-07-30", "Eesti", "Tallinn", "99", "Toulouse", "31400", "kpeegel@gmail.com", "airexpo18", "Aucune", "L", "1", "0", "0", "0", "0");

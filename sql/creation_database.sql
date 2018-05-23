@@ -1,7 +1,4 @@
 
-CREATE DATABASE essai;
-
-USE essai;
 
 CREATE TABLE IF NOT EXISTS Benevole(
 	IdBenevole int,
