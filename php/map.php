@@ -148,7 +148,7 @@ desired effect
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
-        <li><a href="#"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
+        <li><a href="Repere.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
             <span class="pull-right-container">
@@ -172,30 +172,22 @@ desired effect
     <section class="content-header">
       <h1>
         Plan du Site
-        <small>Carte de l'aérodrome de Muret-Lherm</small>
-        <h5>
-            <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/select_pts_repere.css">
-            <select name="select">
-                <optgroup label ="Points de Repère">
-                    <option value ="1">Alpha 1</option>
-                    <option value="2">Alpha 2</option>
-                    <option value="3">Prendre les points de repère dans la bdd</option>
-                </optgroup>
-        </h5>
-      </h1>
-
-        </select>
-    </section>
+        <small>Carte de l'aérodrome de Muret-Lherm</small
 
     <!-- Main content -->
     <section>
 		
 		<p>
-			<map name="map_site" id="id_map_site">
-				<area shape="circle" coords="20, 10, 10" href="../php/planning.php" alt="vers IA"/>
-      	<img src="../documents/Plan_bis.png" height="650" width="800" usemap="map_site" alt="image">
+        <div class = "row">
+          <div class = "col-xs-12">
+            <map name="map_site" id="id_map_site">
+                <area shape="circle" coords="20, 10, 10" href="../php/planning.php" alt="vers IA"/>
+                <img src="../documents/Site_2.png" height="80%" width="90%" usemap="map_site" alt="image">
+            </map>
+        </div>
+        </div>
 		</p>
-				
+
     </section>
     <!-- /.content -->
   </div>
