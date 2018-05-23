@@ -171,165 +171,176 @@ desired effect
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Points de Repère
+               Liste des Points de Repère
             </h1>
         </section>
 
         <!-- Main content -->
         <section class="content container-fluid">
+            <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/select_pts_repere.css">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
             <section id="reperes">
-
-                <h2>Liste des points de repères</h2>
                 <table class="table" data-toggle="table"   data-search="true" 
                        data-pagination="true"  data-page-size="3">
                     <thead>
                     <tr>
-                        <th data-field="col1" data-sortable="true">Point de repère</th>
+                        <th data-field="col1" data-sortable="true">Points de repère</th>
                         <th data-field="col2" data-sortable="true">Coordonnées carte</th>
                     </tr>
                     </thead>
+
                     <tbody>
                     <tr>
-                        <td>AA</td>
+                        <td><a href="#ancre">AA</a></td>
                         <td>7E</td>
                     </tr>
                     <tr>
-                        <td>EV</td>
+                        <td><a href="#ancre">EV</a></td>
                         <td>6F</td>
                     </tr>
                     <tr>
-                        <td>HA</td>
+                        <td><a href="#ancre">HA</a></td>
                         <td>5B</td>
                     </tr>
                     <tr>
-                        <td>HB</td>
+                        <td><a href="#ancre">HB</td>
                         <td>4B</td>
                     </tr>
                     <tr>
-                        <td>IA</td>
+                        <td><a href="#ancre">IA</a></td>
                         <td>7B</td>
                     </tr>
                     <tr>
-                        <td>IB</td>
+                        <td><a href="#ancre">IB</a></td>
                         <td>7C</td>
                     </tr>
                     <tr>
-                        <td>IC</td>
+                        <td><a href="#ancre">IC</a></td>
                         <td>7C</td>
                     </tr>
                     <tr>
-                        <td>ID</td>
+                        <td><a href="#ancre">ID </a></td>
                         <td>7D</td>
                     </tr>
                     <tr>
-                        <td>IE</td>
+                        <td><a href="#ancre">IE</a></td>
                         <td>7E</td>
                     </tr>
                     <tr>
-                        <td>IF</td>
+                        <td><a href="#ancre">IF</a></td>
                         <td>7F</td>
                     </tr>
                     <tr>
-                        <td>IG</td>
+                        <td><a href="#ancre">IG</a></td>
                         <td>7G</td>
                     </tr>
                     <tr>
-                        <td>IH</td>
+                        <td><a href="#ancre">IH</a></td>
                         <td>7J</td>
                     </tr>
                     <tr>
-                        <td>NA</td>
+                        <td><a href="#ancre">NA</a></td>
                         <td>4E</td>
                     </tr>
                     <tr>
-                        <td>NB</td>
+                        <td><a href="#ancre">NB</a></td>
                         <td>4D</td>
                     </tr>
-                    V<tr>
-                        <td>NC</td>
+                    <tr>
+                        <td><a href="#ancre">NC</a></td>
                         <td>5E</td>
                     </tr>
                     <tr>
-                        <td>ND</td>
+                        <td><a href="#ancre">ND</a></td>
                         <td>4E</td>
                     </tr>
                     <tr>
-                        <td>NE</td>
+                        <td><a href="#ancre">NE</a></td>
                         <td>4E</td>
                     </tr>
                     <tr>
-                        <td>PZ</td>
+                        <td><a href="#ancre">PZ</a></td>
                         <td>5G</td>
                     </tr>
                     <tr>
-                        <td>RA</td>
+                        <td><a href="#ancre">RA</a></td>
                         <td>4F</td>
                     </tr>
                     <tr>
-                        <td>RB</td>
+                        <td><a href="#ancre">RB</a></td>
                         <td>5H</td>
                     </tr>
                     <tr>
-                        <td>RC</td>
+                        <td><a href="#ancre">RC</a></td>
                         <td>6I</td>
                     </tr>
                     <tr>
-                        <td>RD</td>
+                        <td><a href="#ancre">RD</a></td>
                         <td>6I</td>
                     </tr>
                     <tr>
-                        <td>RE</td>
+                        <td><a href="#ancre">RE</a></td>
                         <td>7N</td>
                     </tr>
                     <tr>
-                        <td>RF</td>
+                        <td><a href="#ancre">RF</a></td>
                         <td>2O</td>
                     </tr>
                     <tr>
-                        <td>SA</td>
+                        <td><a href="#ancre">SA</a></td>
                         <td>6F</td>
                     </tr>
                     <tr>
-                        <td>SB</td>
+                        <td><a href="#ancre">SB</a></td>
                         <td>6D</td>
                     </tr>
                     <tr>
-                        <td>SC</td>
+                        <td><a href="#ancre">SC</a></td>
                         <td>6C</td>
                     </tr>
                     <tr>
-                        <td>SD</td>
+                        <td><a href="#ancre">SD</a></td>
                         <td>6C</td>
                     </tr>
                     <tr>
-                        <td>SE</td>
+                        <td><a href="#ancre">SE</a></td>
                         <td>7C</td>
                     </tr>
                     <tr>
-                        <td>SF</td>
+                        <td><a href="#ancre">SF</a></td>
                         <td>6D</td>
                     </tr>
                     <tr>
-                        <td>SG</td>
+                        <td><a href="#ancre">SG</a></td>
                         <td>6E</td>
                     </tr>
                     <tr>
-                        <td>VD</td>
+                        <td><a href="#ancre">VD</a></td>
                         <td>7E</td>
                     </tr>
                     <tr>
-                        <td>ZT</td>
+                        <td><a href="#ancre">ZT</a></td>
                         <td>7D</td>
                     </tr>
                     <tr>
-                        <td>ZV</td>
+                        <td><a href="#ancre">ZV</a></td>
                         <td>7F</td>
                     </tr>
-
                     </tbody>
-
                 </table>
             </section>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12" >
+                    <b id="ancre">
+                <img src="../documents/Site_quadrille.png" width="100%">
+                    </b>
+                </div>
+            </div>
+
 
         </section>
         <!-- /.content -->
