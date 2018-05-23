@@ -88,7 +88,7 @@ desired effect
             <a class="dropdown-toggle" data-toggle="dropdown" style="float: right">
               <!-- The user image in the navbar-->
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs" align="right"><img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image"></span>
+              <img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image">
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -122,7 +122,7 @@ desired effect
         <!-- Optionally, you can add icons to the links -->
         <li><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li class="active"><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
-        <li><a href="#"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
+        <li><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
             <span class="pull-right-container">
@@ -153,14 +153,15 @@ desired effect
 
     <!-- Main content -->
     <section>
-    		<link rel="stylesheet" href="planning.css">
-    				<table>
-    					<thead>
-    						<tr>
-								<td><strong>Horaires</strong></td>
-								<td><strong>Point de repère</strong></td>
-								<td><strong>Tache à effectuer</strong></td>
-							</tr>
+    		<link rel="stylesheet" href="select_pts_repere.css">
+    				<table class="table" data-toggle="table"  data-search="true" data-pagination="true"  data-page-size="3">
+                    <thead>
+                    <tr>
+                        <th data-field="col1" data-sortable="true">Horaires</th>
+                        <th data-field="col2" data-sortable="true">Point de repère</th>
+                        <th data-field="col3" data-sortable="true">Tache à effectuer</th>
+                    </tr>
+                    </thead>
 						</thead>
 						<tbody>
 							<tr>
@@ -183,7 +184,7 @@ desired effect
       <a href="http://airexpo.org/">Airexpo</a>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="www.airexpo.org">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2016 <a href="http://airexpo.org">Company</a>.</strong> All rights reserved.
   </footer>
 
 </div>
