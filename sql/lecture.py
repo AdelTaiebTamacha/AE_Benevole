@@ -276,8 +276,99 @@ def insert_benevole_file(l):
                 
             file.write(para2 + ",\n")
         file.write(";")
-                
 
+def insertEquipe_file(table):
+    
+    request_file_path = "equipe.sql"
+    
+    
+    with open (request_file_path,'w') as file:
+    
+        file.write("INSERT INTO Equipe VALUES (IdEquipe, IdResponsable, CoorLieu)\n")
+        NbMembre = 3
+        
+        for i in range(len(table)):
+            print(table[i])
+            if table[i][3] == "1":
+            
+                IdEquipe = i//NbMembre+1
+                IdResponsable = i
+                Lieu = ""
+                para = [IdEquipe, IdResponsable, Lieu]
+                
+                s = '", "'
+                para = [str(ele) for ele in para]
+                
+                para2 = '("' + para[0]
+                for ele in para[1:]:
+                    para2+= s + ele
+                para2+= '")'
+                print(para2)
+            
+                file.write(para2 + ",\n")        
+
+                
+def insertVoiture_file(table):
+    request_file_path = "Voiture.sql"
+    NbPlace = 5
+    
+    with open (request_file_path,'w') as file:
+    
+        file.write("INSERT INTO Voiture VALUES (Plaque, NbPlace, IdBenevole, IdEquipeCovoit)\n")
+        IdEquipeCovoit = 1
+        
+        for i in range(len(table)):
+            # ajout d'une voiture si le bénévole en possède une
+            voiture = boolean(table[i][9])
+            IdBenevole = i
+            if voiture:
+                Plaque = table[i][10]
+                IdEquipeCovoit += 1
+        
+                para = [Plaque, NbPlace, IdBenevole, IdEquipeCovoit]
+                
+                s = '", "'
+                para = [str(ele) for ele in para]
+                
+                para2 = '("' + para[0]
+                for ele in para[1:]:
+                    para2+= s + ele
+                para2+= '")'
+                print(para2)
+            
+                file.write(para2 + ",\n")
+
+
+
+def insertLieu_file(table):
+    
+    request_file_path = "lieu.sql"
+    
+    with open (request_file_path,'a') as file:
+        file.write("INSERT INTO Lieu VALUES (CoorLieu, Nom, Tache) \n")
+        
+        
+        
+        
+        for i in range(len(table)):
+            print(table[i])
+            if table[i][1] != "":
+            
+                CoorLieu = table[i][1]
+                Nom = table[i][2]
+                Tache = table[i][3]
+                para = [CoorLieu, Nom, Tache]
+                
+                s = '", "'
+                para = [str(ele) for ele in para]
+                
+                para2 = '("' + para[0]
+                for ele in para[1:]:
+                    para2+= s + ele
+                para2+= '")'
+                print(para2)
+            
+                file.write(para2 + ",\n")            
 
 def insertResponsable_file(idBenevole):
     sql = "INSERT INTO Responsable VALUES (%s)"
@@ -300,25 +391,8 @@ def insertMateriel_file(Materiel, IdResponsable):
             f.write(sql % para)
             
 
-def insertEquipe_file(IdEquipe, IdResponsable, CoorLieu):
-    sql = "INSERT INTO Equipe VALUES (%s, %s, %s)"
-    para = (IdEquipe, IdResponsable, CoorLieu)
-    request_file_path = "equipe.sql"
-    
-    with open (request_file_path,'a') as f:
-            #Write in the file
-            
-            f.write(sql % para)
 
-def insertLieu_file(CoorLieu, Nom, Tache):
-    sql = "INSERT INTO Lieu VALUES (%s, %s, %s)"
-    para = (CoorLieu, Nom, Tache)
-    request_file_path = "lieu.sql"
-    
-    with open (request_file_path,'a') as f:
-            #Write in the file
-            
-            f.write(sql % para + "\n")
+
 
 
 def insertCreneauHoraire_file(IdEquipe, CoorLieu, HDebut, HFin):
@@ -332,15 +406,7 @@ def insertCreneauHoraire_file(IdEquipe, CoorLieu, HDebut, HFin):
             f.write(sql % para)
 
 
-def insertVoiture_file(Plaque, NbPlace, IdBenevole, IdEquipeCovoit):
-    sql = "INSERT INTO Voiture VALUES (%s, %s, %s, %s)"
-    para = (Plaque, NbPlace, IdBenevole, IdEquipeCovoit)
-    request_file_path = "voiture.sql"
-    
-    with open (request_file_path,'a') as f:
-            #Write in the file
-            
-            f.write(sql % para)
+         
 
 
 def insertEquipeCovoit_file(IdEquipeCovoit, HDep, LieuDep):
@@ -352,3 +418,155 @@ def insertEquipeCovoit_file(IdEquipeCovoit, HDep, LieuDep):
             #Write in the file
             
             f.write(sql % para)
+
+            
+
+################################################################################
+#
+#                                Version ecriture data
+#
+#
+################################################################################
+  
+  
+  
+def insert_benevole_data(l):
+    
+    n = len(l)
+    request_file_path = "benevole.txt"
+    
+    with open (request_file_path,'w') as file:
+        
+        txt = "IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit\n"
+            
+        file.write(txt)
+        for i in range(n):#1,n
+            # print(i)
+            #print(l[i])
+            IdBenevole = i+1
+            Nom = l[i][2]
+            Prenom = l[i][3]
+            
+            DateNaiss = l[i][4]
+            PaysNaiss, VilleNaiss, DepNaiss = naissance(l[i][5])
+            Adresse = l[i][12]
+            print(l[i][13])
+            CodePostal = int(float(l[i][13])) if l[i][13]!="" else ""
+            
+            Login = l[i][1]
+            mdp = "airexpo18"
+            
+            QualifAero = l[i][6]
+            Taille = l[i][7]
+            Covoiturage = boolean(l[i][11])
+            Airexpo17 = ancien(l[i][17])
+            Preference = preference(l[i][15], i)
+            NumEquipe = 0 #initialement
+            IdEquipeCovoit = 0 #initialement
+            para = [IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit]
+            
+            s = ', '
+            para = [str(ele) for ele in para]
+            
+            para2 = '[' + para[0]
+            for ele in para[1:]:
+                para2+= s + ele
+            para2+= ']'
+            print(para2)
+            
+            
+            #Write in the file
+                
+            file.write(para2 + "\n")
+
+            
+def insertVoiture_data(table):
+    request_file_path = "Voiture.txt"
+    NbPlace = 5
+    
+    with open (request_file_path,'w') as file:
+    
+        file.write("Plaque, NbPlace, IdBenevole, IdEquipeCovoit\n")
+        IdEquipeCovoit = 1
+        
+        for i in range(len(table)):
+            # ajout d'une voiture si le bénévole en possède une
+            voiture = boolean(table[i][9])
+            IdBenevole = i
+            if voiture:
+                Plaque = table[i][10]
+                IdEquipeCovoit += 1
+        
+                para = [Plaque, NbPlace, IdBenevole, IdEquipeCovoit]
+                
+                s = ', '
+                para = [str(ele) for ele in para]
+            
+                para2 = '[' + para[0]
+                for ele in para[1:]:
+                    para2+= s + ele
+                para2+= ']'
+                print(para2)
+            
+                file.write(para2 + "\n")
+        
+def insertEquipe_data(table):
+    
+    request_file_path = "equipe.txt"
+    
+    
+    with open (request_file_path,'w') as file:
+    
+        file.write("(IdEquipe, IdResponsable, CoorLieu)\n")
+        NbMembre = 3
+        
+        for i in range(len(table)):
+            print(table[i])
+            if table[i][3] == "1":
+            
+                IdEquipe = i//NbMembre+1
+                IdResponsable = i
+                Lieu = ""
+                para = [IdEquipe, IdResponsable, Lieu]
+                
+                s = ', '
+                para = [str(ele) for ele in para]
+            
+                para2 = '[' + para[0]
+                for ele in para[1:]:
+                    para2+= s + ele
+                para2+= ']'
+                print(para2)
+            
+                file.write(para2 + "\n")
+                
+                
+def insertLieu_data(table):
+    
+    request_file_path = "lieu.txt"
+    
+    with open (request_file_path,'a') as file:
+        file.write("CoorLieu, Nom, Tache \n")
+        
+        
+        
+        
+        for i in range(len(table)):
+            print(table[i])
+            if table[i][1] != "":
+            
+                CoorLieu = table[i][1]
+                Nom = table[i][2]
+                Tache = table[i][3]
+                para = [CoorLieu, Nom, Tache]
+                
+                s = ', '
+                para = [str(ele) for ele in para]
+            
+                para2 = '[' + para[0]
+                for ele in para[1:]:
+                    para2+= s + ele
+                para2+= ']'
+                print(para2)
+            
+                file.write(para2 + "\n") 
