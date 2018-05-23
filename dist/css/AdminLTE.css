@@ -52,6 +52,11 @@ body {
  * Content Wrapper - contains the main content
  */
 .content-wrapper,
+.table {
+	border-collapse: collapse;
+	border: 2px solid black;
+	width: 100%;
+}
 .main-footer {
   -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
   -moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;

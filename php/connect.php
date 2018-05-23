@@ -57,7 +57,8 @@ function login($login,$password) {
             $_SESSION['prenom'] = $donnee["prenom"];
             $_SESSION['nom'] = $donnee["nom"];
 
-            header('Location: mainPage.php');
+
+            header('Location: map.php');
         }
         else{
             echo "mdp errone".'<br/>';
