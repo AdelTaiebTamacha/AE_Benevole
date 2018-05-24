@@ -123,7 +123,7 @@ desired effect
     </section>
 
     <!-- Main content -->
-    <section>
+     <section>
         <link rel="stylesheet" href="select_pts_repere.css">
         <div class="row">
             <div class="col-md-4 col-xs-12">
@@ -138,11 +138,27 @@ desired effect
                     </thead>
 						</thead>
 						<tbody>
-							<tr>
-								<td>08:00 - 10:00</td>
-								<td><b>IC</b></td>
-							<td>Veiller aux abords de piste</td>
-							</tr>
+
+                            <tr>
+                                <td>10:00 - 12:00</td>
+                                <td><b><?php echo $_SESSION['repere_10'] ?></b></td>
+                                <td><?php echo $_SESSION['tache_10'] ?></td>
+                            </tr>
+                            <tr>
+                                <td>12:00 - 14:00</td>
+                                <td><b><?php echo $_SESSION['repere_12'] ?></b></td>
+                                <td><?php echo $_SESSION['tache_12'] ?></td>
+                            </tr>
+                            <tr>
+                                <td>14:00 - 16:00</td>
+                                <td><b><?php echo $_SESSION['repere_14'] ?></b></td>
+                                <td><?php echo $_SESSION['tache_14'] ?></td>
+                            </tr>
+                            <tr>
+                                <td>16:00 - 18:00</td>
+                                <td><b><?php echo $_SESSION['repere_16'] ?></b></td>
+                                <td><?php echo $_SESSION['tache_16'] ?></td>
+                            </tr>
 						</tbody>
 					</table>
 
