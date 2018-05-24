@@ -233,13 +233,12 @@ def insert_benevole_file(l):
     request_file_path = "benevole.sql"
     
     with open (request_file_path,'w') as file:
-        file.write("USE Benevole\n")
-        sql = "INSERT INTO Benevole (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit) VALUES "
+        sql = "INSERT INTO Benevole (IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit) VALUES \n"
             
         file.write(sql)
         for i in range(n):#1,n
             # print(i)
-            #print(l[i])
+            print(l[i])
             IdBenevole = i+1
             Nom = l[i][2]
             Prenom = l[i][3]
@@ -247,7 +246,6 @@ def insert_benevole_file(l):
             DateNaiss = l[i][4]
             PaysNaiss, VilleNaiss, DepNaiss = naissance(l[i][5])
             Adresse = l[i][12]
-            print(l[i][13])
             CodePostal = int(float(l[i][13])) if l[i][13]!="" else ""
             
             Login = l[i][1]
@@ -256,9 +254,11 @@ def insert_benevole_file(l):
             QualifAero = l[i][6]
             Taille = l[i][7]
             Covoiturage = boolean(l[i][11])
-            Airexpo17 = ancien(l[i][17])
+            Airexpo17 = ancien(l[i][18])
             Preference = preference(l[i][15], i)
-            NumEquipe = 0 #initialement
+            NumEquipe = l[i][17] #initialement
+            print(l[i][18])
+            
             IdEquipeCovoit = 0 #initialement
             para = [IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit]
             
@@ -269,7 +269,7 @@ def insert_benevole_file(l):
             for ele in para[1:]:
                 para2+= s + ele
             para2+= '")'
-            print(para2)
+            # print(para2)
             
             
             #Write in the file
@@ -368,42 +368,99 @@ def insertLieu_file(table):
                 para2+= '")'
                 print(para2)
             
-                file.write(para2 + ",\n")            
+                file.write(para2 + ",\n")        
 
-def insertResponsable_file(idBenevole):
-    sql = "INSERT INTO Responsable VALUES (%s)"
-    para = (idBenevole)
-    request_file_path = "benevole.sql"
+                
+def insertCreneauHoraire_file(table):
     
-    with open (request_file_path,'a') as f:
-            #Write in the file
-                    
-            f.write(sql % para)
+    request_file_path = "creneau.sql"
+    creneau = ["10:00", "12:00", "14:00", "16:00", "18:00"]
+    
+    with open (request_file_path,'a') as file:
+        file.write("INSERT INTO CreneauHoraire (IdEquipe, CoorLieu, HDebut, HFin) VALUES\n")
+        
+        
+        
+        
+        for i in range(len(table)):
+            print(table[i])
+            
+            
+            CoorLieu = table[i][0]
+            for j in [0,1,2,3]:
+                IdEquipe = int(float(table[i][j+1]))
+                HDebut = creneau[j]
+                HFin = creneau[j+1]
+                para = [IdEquipe, CoorLieu, HDebut, HFin]
+                
+                s = '", "'
+                para = [str(ele) for ele in para]
+                
+                para2 = '("' + para[0]
+                for ele in para[1:]:
+                    para2+= s + ele
+                para2+= '")'
+                print(para2)
+            
+                file.write(para2 + ",\n")  
 
-def insertMateriel_file(Materiel, IdResponsable):
-    sql = "INSERT INTO Materiel VALUES (%s, %s)"
-    para = (Materiel, IdResponsable)
+                
+def insertResponsable_file(table):
+    
+    request_file_path = "respo.sql"
+    
+    
+    with open (request_file_path,'w') as file:
+    
+        file.write("INSERT INTO Responsable (IdResponsable) VALUES\n")
+        
+        for i in range(len(table)):
+            print(table[i])
+            if table[i][3] == "1":
+            
+                IdResponsable = str(i+1)
+                para2 = '("' + IdResponsable + '")'
+                print(para2)
+            
+                file.write(para2 + ",\n") 
+                
+
+def insertMateriel_file(table):
+
     request_file_path = "materiel.sql"
     
-    with open (request_file_path,'a') as f:
-            #Write in the file
-            
-            f.write(sql % para)
-            
-
-
-
-
-
-def insertCreneauHoraire_file(IdEquipe, CoorLieu, HDebut, HFin):
-    sql = "INSERT INTO CreneauHoraire VALUES (%s, %s, %s, %s)"
-    para = (IdEquipe, CoorLieu, HDebut, HFin)
-    request_file_path = "creneay.sql"
     
-    with open (request_file_path,'a') as f:
-            #Write in the file
+    
+    with open (request_file_path,'w') as file:
+    
+        file.write("INSERT INTO (Numero, IdResponsable) VALUES\n")
+        
+        counter = 1
+        for i in range(len(table)):
+            print(table[i])
+            if table[i][3] == "1":
             
-            f.write(sql % para)
+                Numero = counter
+                IdResponsable = i+1
+                
+                para = [Numero, IdResponsable]
+                
+                s = '", "'
+                para = [str(ele) for ele in para]
+                
+                para2 = '("' + para[0]
+                for ele in para[1:]:
+                    para2+= s + ele
+                para2+= '")'
+                print(para2)
+            
+                file.write(para2 + ",\n") 
+                counter+=1
+
+
+
+
+
 
 
          
@@ -461,7 +518,7 @@ def insert_benevole_data(l):
             Covoiturage = boolean(l[i][11])
             Airexpo17 = ancien(l[i][17])
             Preference = preference(l[i][15], i)
-            NumEquipe = 0 #initialement
+            NumEquipe = l[i][17] #initialement
             IdEquipeCovoit = 0 #initialement
             para = [IdBenevole, Nom, Prenom, DateNaiss, PaysNaiss, VilleNaiss, DepNaiss, Adresse, CodePostal, Login, mdp, QualifAero, Taille, Covoiturage, Airexpo17, Preference, NumEquipe, IdEquipeCovoit]
             
