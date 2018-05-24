@@ -6,9 +6,9 @@ nbplaceimpose = 5
 filebenevole = "Benevoles.xlsx"
 tableaubenevole = lecture.lecteur(filebenevole)
 
-#""" BENEVOLE
+""" BENEVOLE
 lecture.insert_benevole_file(tableaubenevole)
-lecture.insert_benevole_data(tableaubenevole)
+#lecture.insert_benevole_data(tableaubenevole)
 #"""
 
 
@@ -33,12 +33,29 @@ tableaulieu = lecture.lecteur(filelieu)
 lecture.insertLieu_data(tableaulieu)
 #"""
 
-""" CRENEAU
+# """ CRENEAU
 filehoraire = "creneauhoraire.xlsx"
 tableauhoraire = lecture.lecteur(filehoraire)
 
 lecture.insertCreneauHoraire_file(tableauhoraire)
 #"""
+
+""" RESPONSABLE
+filerespo = "Equipes.xlsx"
+tablorespo = lecture.lecteur(filerespo)
+
+lecture.insertResponsable_file(tablorespo)
+#"""
+
+
+""" RESPONSABLE
+filemateriel = "Equipes.xlsx"
+tableaumateriel = lecture.lecteur(filemateriel)
+
+lecture.insertMateriel_file(tableaumateriel)
+#"""
+
+
 
 
 """

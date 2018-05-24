@@ -388,7 +388,7 @@ def insertCreneauHoraire_file(table):
             
             CoorLieu = table[i][0]
             for j in [0,1,2,3]:
-                IdEquipe = table[i][j]
+                IdEquipe = int(float(table[i][j+1]))
                 HDebut = creneau[j]
                 HFin = creneau[j+1]
                 para = [IdEquipe, CoorLieu, HDebut, HFin]
@@ -404,27 +404,58 @@ def insertCreneauHoraire_file(table):
             
                 file.write(para2 + ",\n")  
 
-def insertResponsable_file(idBenevole):
-    sql = "INSERT INTO Responsable VALUES (%s)"
-    para = (idBenevole)
-    request_file_path = "benevole.sql"
+                
+def insertResponsable_file(table):
     
-    with open (request_file_path,'a') as f:
-            #Write in the file
-                    
-            f.write(sql % para)
+    request_file_path = "respo.sql"
+    
+    
+    with open (request_file_path,'w') as file:
+    
+        file.write("INSERT INTO Responsable (IdResponsable) VALUES\n")
+        
+        for i in range(len(table)):
+            print(table[i])
+            if table[i][3] == "1":
+            
+                IdResponsable = str(i+1)
+                para2 = '("' + IdResponsable + '")'
+                print(para2)
+            
+                file.write(para2 + ",\n") 
+                
 
-def insertMateriel_file(Materiel, IdResponsable):
-    sql = "INSERT INTO Materiel VALUES (%s, %s)"
-    para = (Materiel, IdResponsable)
+def insertMateriel_file(table):
+
     request_file_path = "materiel.sql"
     
-    with open (request_file_path,'a') as f:
-            #Write in the file
+    
+    
+    with open (request_file_path,'w') as file:
+    
+        file.write("INSERT INTO (Numero, IdResponsable) VALUES\n")
+        
+        counter = 1
+        for i in range(len(table)):
+            print(table[i])
+            if table[i][3] == "1":
             
-            f.write(sql % para)
+                Numero = counter
+                IdResponsable = i+1
+                
+                para = [Numero, IdResponsable]
+                
+                s = '", "'
+                para = [str(ele) for ele in para]
+                
+                para2 = '("' + para[0]
+                for ele in para[1:]:
+                    para2+= s + ele
+                para2+= '")'
+                print(para2)
             
-
+                file.write(para2 + ",\n") 
+                counter+=1
 
 
 
