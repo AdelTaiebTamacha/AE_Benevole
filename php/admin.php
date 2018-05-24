@@ -7,9 +7,7 @@
 <!--        <link rel="stylesheet" type="text/css" href="style.css"/>-->
         <link rel="stylesheet" type="text/css" href="look.css"/>
 		
-		<style>
-			td	{align:"center";}
-		</style>
+		
     </head>
 
     <header>
@@ -49,91 +47,9 @@
     <body>
 	
 	
-		<script>
 			
-			function update_name(){
-				
-				document.getElementById("demo").innerHTML = "Paragraph changed.";
-				
-			}
-			
-			function validateForm() {
-				var x = document.forms["myForm"]["fname"].value;
-				if (x == "") {
-					alert("Name must be filled out");
-					return false;
-				}
-			}
-			
-			function myFunction() {
-				var x, text;
-
-				// Get the value of the input field with id="numb"
-				x = document.getElementById("numb").value;
-
-				
-				document.getElementById("demo").innerHTML = "Hello";
-				
-			}
-		</script>
-		
-		
-		
-		
-		
         <div>
-            <p class="login-box-msg">Modification </p>
-            <form method="post" action="bdd_modifier.php">
-                
-                    <input type="text" name="login" value="mail">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                
-                
-                    <input type="password" name="password" value="password">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-					
-					</br>
-					
-				<?php 
-				
-				$selector = array();
-				for ($i = 1; $i<= 200; $i++){
-						$selector[$i]= "";
-					}
-				$selector[99] = " selected";
-				
-				
-				?>
-				<select name="IdBenevole" size="1" style="width:10%;">
-					<option value="0">IdBenevole</option>
-					<?php	
-						for ($i = 1; $i<= 200; $i++){
-							echo "<option value='".$i."'".$selector[$i].">".$i."</option>";
-						}
-					?>
-				</select>
-				<select name="IdBenevole" size="1" style="width:10%;">
-					<option value="0">IdBenevole</option>
-					<?php	
-						for ($i = 1; $i<= 200; $i++){
-							echo "<option value='".$i."'".$selector[$i].">".$i."</option>";
-						}
-					?>
-				</select>
-				
-				
-				
-				<input id="numb">
-
-				<button type="button" onclick="myFunction()">Submit</button>
-
-			<p id="demo"></p>
-				
-				
-				
-            </form>
-			
-			<p id="demo" style="display:none;"> Helloword </p>
+            				
 			
 			
 			<div style="width: 100%; height: 100%; overflow: auto; overflow-x: hidden;">

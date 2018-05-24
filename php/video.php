@@ -89,11 +89,11 @@ desired effect
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
+        <li><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
         <li><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
         <li><a href="infos.php"><i class="fa fa-bell"></i> <span>Informations diverses</span></a></li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="../infos.php"><i class="fa fa-file"></i> <span>Informations</span>
                         <span class="pull-right-container">
             	<i class="fa fa-angle-left pull-right"></i>
@@ -137,7 +137,7 @@ desired effect
 			
 			
 			<video width=60% height=50% controls>
-			  <source src="../Video/Trailer.mp4" type="video/mp4">
+			  <source src="../Video/Demo.mp4" type="video/mp4">
 			
 			</video>
 			

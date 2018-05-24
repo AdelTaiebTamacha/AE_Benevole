@@ -78,9 +78,8 @@ function get_info($conn, $donnee) {
 function login($login,$password) {
 	
 	
-	if ($login == "'admin'" and $password == "admin"){
+	if ($login == "'admin'" and $password == "'admin'"){
 		header('Location: admin.php');
-		echo "hello";
 	}
 
 	$BDD_server = "localhost";
