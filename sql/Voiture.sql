@@ -1,4 +1,4 @@
-INSERT INTO Voiture (Plaque, NbPlace, IdBenevole, IdEquipeCovoit) VALUES 
+INSERT INTO Voiture (Plaque, NbPlace, IdBenevole, IdEquipeCovoit) VALUES
 ("EJ971FY", "5", "0", "2"),
 ("CK-958-WM", "5", "2", "3"),
 ("", "5", "3", "4"),
@@ -25,6 +25,7 @@ INSERT INTO Voiture (Plaque, NbPlace, IdBenevole, IdEquipeCovoit) VALUES
 ("DX-384-XN", "5", "62", "25"),
 ("CK-041-GG", "5", "66", "26"),
 ("DM-130-MY", "5", "68", "27"),
+("DM-130-MY", "5", "69", "28"),
 ("By 213 dr", "5", "70", "29"),
 ("EC-020-MT", "5", "71", "30"),
 ("EE-043-NT", "5", "74", "31"),
@@ -71,4 +72,16 @@ INSERT INTO Voiture (Plaque, NbPlace, IdBenevole, IdEquipeCovoit) VALUES
 ("BE583FP", "5", "147", "72"),
 ("CV332TC", "5", "148", "73"),
 ("Dv 062 ea", "5", "149", "74"),
-("CD 813 MT", "5", "150", "75");
+("CD 813 MT", "5", "150", "75"),
+("", "5", "153", "76"),
+("", "5", "154", "77"),
+("", "5", "155", "78"),
+("", "5", "156", "79"),
+("", "5", "157", "80"),
+("", "5", "158", "81"),
+("", "5", "159", "82"),
+("", "5", "160", "83"),
+("", "5", "161", "84"),
+("", "5", "162", "85"),
+("", "5", "163", "86"),
+("10.0", "5", "164", "87");

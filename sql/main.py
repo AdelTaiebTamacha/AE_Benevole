@@ -6,41 +6,41 @@ nbplaceimpose = 5
 filebenevole = "Benevoles.xlsx"
 tableaubenevole = lecture.lecteur(filebenevole)
 
-""" BENEVOLE
+# """ BENEVOLE
 lecture.insert_benevole_file(tableaubenevole)
 #lecture.insert_benevole_data(tableaubenevole)
 #"""
 
 
-""" VOITURE
+# """ VOITURE
 lecture.insertVoiture_file(tableaubenevole)
-lecture.insertVoiture_data(tableaubenevole)
+# lecture.insertVoiture_data(tableaubenevole)
 #"""
 
-""" EQUIPE
+# """ EQUIPE
 fileequipe = "Equipes.xlsx"
 tableauequipe = lecture.lecteur(fileequipe)
 
 lecture.insertEquipe_file(tableauequipe)
-lecture.insertEquipe_data(tableauequipe)
+# lecture.insertEquipe_data(tableauequipe)
 #"""
 
-""" Postes
+# """ Postes
 filelieu = "Postes.xlsx"
 tableaulieu = lecture.lecteur(filelieu)
 
-# lecture.insertLieu_file(tableaulieu)
-lecture.insertLieu_data(tableaulieu)
+lecture.insertLieu_file(tableaulieu)
+# lecture.insertLieu_data(tableaulieu)
 #"""
 
-""" CRENEAU
+# """ CRENEAU
 filehoraire = "Creneauhoraire.xlsx"
 tableauhoraire = lecture.lecteur(filehoraire)
 
 lecture.insertCreneauHoraire_file(tableauhoraire)
 #"""
 
-""" RESPONSABLE
+# """ RESPONSABLE
 filerespo = "Equipes.xlsx"
 tablorespo = lecture.lecteur(filerespo)
 
@@ -48,7 +48,7 @@ lecture.insertResponsable_file(tablorespo)
 #"""
 
 
-""" RESPONSABLE
+# """ RESPONSABLE
 filemateriel = "Equipes.xlsx"
 tableaumateriel = lecture.lecteur(filemateriel)
 
@@ -57,10 +57,10 @@ lecture.insertMateriel_file(tableaumateriel)
 
 
 # """ FUSION
-with open (",'a') as file:
+with open ('fill_database.sql', 'a') as file:
         
 	for filename in ["benevole.sql", "equipe.sql", "voiture.sql", "lieu.sql", "creneau.sql", "respo.sql", "materiel.sql"]:
-		file.write(open(filename))
+		file.write(open(filename).read() + "\n\n")
 #"""
 
 

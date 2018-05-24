@@ -104,6 +104,7 @@ desired effect
                         <li><a href="../template_cv/cv_tanguy.html">Tanguy Lopez</a></li>
                         <li><a href="../template_cv/cv_camille.html">Camille Delloye</a></li>
                         <li><a href="../template_cv/cv_mathilde.html">Mathilde Merland</a></li>
+                        <li><a href="../php/video.php">Video tutoriel</a></li>
                     </ul>
                 </li>     
 		  <li><a href="deconnect.php"><i class="fa fa-circle"></i> <span>Déconnexion</span></a></li>
@@ -118,7 +119,7 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1 style="padding-bottom:40px">
-        Plan de l'aérodrome
+        Tutoriel
       </h1>
 
         </select>
