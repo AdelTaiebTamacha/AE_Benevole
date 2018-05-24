@@ -26,7 +26,7 @@
 			$servername = "localhost";
 			$username = "root";
 			$password = "";
-			$dbname = "benevole_test";
+			$dbname = "benevole";
 
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
@@ -52,12 +52,28 @@
 		<script>
 			
 			function update_name(){
+				
 				document.getElementById("demo").innerHTML = "Paragraph changed.";
 				
 			}
 			
+			function validateForm() {
+				var x = document.forms["myForm"]["fname"].value;
+				if (x == "") {
+					alert("Name must be filled out");
+					return false;
+				}
+			}
 			
-			
+			function myFunction() {
+				var x, text;
+
+				// Get the value of the input field with id="numb"
+				x = document.getElementById("numb").value;
+
+				
+				document.getElementById("demo").innerHTML = "Hello";
+			}
 		</script>
 		
 		
@@ -104,18 +120,19 @@
 					?>
 				</select>
 				
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck">
-                            <label>
-                                <button type="submit" class="btn">Sign In</button>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+				
+				
+				<input id="numb">
+
+				<button type="button" onclick="myFunction()">Submit</button>
+
+			<p id="demo"></p>
+				
+				
+				
             </form>
 			
-			<p id="demo"> Helloword </p>
+			<p id="demo" style="display:none;"> Helloword </p>
 			
 			
 			<div style="width: 100%; height: 100%; overflow: auto; overflow-x: hidden;">

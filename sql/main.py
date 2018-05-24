@@ -33,8 +33,8 @@ tableaulieu = lecture.lecteur(filelieu)
 lecture.insertLieu_data(tableaulieu)
 #"""
 
-# """ CRENEAU
-filehoraire = "creneauhoraire.xlsx"
+""" CRENEAU
+filehoraire = "Creneauhoraire.xlsx"
 tableauhoraire = lecture.lecteur(filehoraire)
 
 lecture.insertCreneauHoraire_file(tableauhoraire)
@@ -55,6 +55,13 @@ tableaumateriel = lecture.lecteur(filemateriel)
 lecture.insertMateriel_file(tableaumateriel)
 #"""
 
+
+# """ FUSION
+with open (",'a') as file:
+        
+	for filename in ["benevole.sql", "equipe.sql", "voiture.sql", "lieu.sql", "creneau.sql", "respo.sql", "materiel.sql"]:
+		file.write(open(filename))
+#"""
 
 
 

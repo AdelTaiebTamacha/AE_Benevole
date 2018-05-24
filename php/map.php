@@ -57,7 +57,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-red sidebar-mini">
+<body class="sidebar-collapse skin-red sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -66,48 +66,17 @@ desired effect
     <!-- Logo -->
     <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Eq.</b> X</span>
+      <span class="logo-mini"><b>Eq.</b> <?php echo $_SESSION["NumEquipe"]; ?></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Equipe</b> X</span>
+      <span class="logo-lg"><b>Equipe</b> <?php echo $_SESSION["NumEquipe"]; ?></span>
     </a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" >
       <!-- Sidebar toggle button-->
-      <a data-toggle="push-menu" role="button">
-        <span class="sr-only" id="barre">Toggle navigation</span>
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
       </a>
-      
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a class="dropdown-toggle" data-toggle="dropdown" style="float: right">
-              <!-- The user image in the navbar-->
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs" align="right"><img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                <img src="../documents/logoAE.png" width="7%">
-                <p>
-                    Bénévole B
-                </p>
-              </li>
-              </li>
-              <!-- Menu Footer-->
-                <div class="pull-center">
-                  <a href="deconnect.php" class="btn btn-default btn-flat" align="center">Déconnexion</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
     </nav>
   </header>
   
@@ -123,13 +92,22 @@ desired effect
         <li class="active"><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
         <li><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
-        <li class="treeview">
-          <a href="infos.php"><i class="fa fa-bell"></i> <span>Informations</span>
-            <span class="pull-right-container">
+        <li><a href="infos.php"><i class="fa fa-bell"></i> <span>Informations diverses</span></a></li>
+                <li class="treeview">
+                    <a href="../infos.php"><i class="fa fa-file"></i> <span>Informations</span>
+                        <span class="pull-right-container">
             	<i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-        </li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="../template_cv/cv_adel.html">Adel Taieb Tamacha</a></li>
+                        <li><a href="../template_cv/cv_tanguy.html">Tanguy Lopez</a></li>
+                        <li><a href="../template_cv/cv_camille.html">Camille Delloye</a></li>
+                        <li><a href="../template_cv/cv_mathilde.html">Mathilde Merland</a></li>
+                        <li><a href="../php/video.php">Video tutoriel</a></li>
+                    </ul>
+                </li>     
+		  <li><a href="deconnect.php"><i class="fa fa-circle"></i> <span>Déconnexion</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -140,9 +118,12 @@ desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Plan du Site
-        <small>Carte de l'aérodrome de Muret-Lherm</small
+      <h1 style="padding-bottom:40px">
+        Plan de l'aérodrome
+      </h1>
+
+        </select>
+    </section>
 
     <!-- Main content -->
     <section>
@@ -150,10 +131,8 @@ desired effect
 		<p>
         <div class = "row">
           <div class = "col-xs-12">
-            <map name="map_site" id="id_map_site">
-                <area shape="circle" coords="20, 10, 10" href="../php/planning.php" alt="vers IA"/>
-                <img src="../documents/Site_2.png" height="80%" width="90%" usemap="map_site" alt="image">
-            </map>
+            <img src="../documents/Site_2.png" width="100%">
+			<img src="../documents/plan_parking.png" width="100%">
         </div>
         </div>
 		</p>
