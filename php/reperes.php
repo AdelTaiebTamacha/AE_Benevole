@@ -66,16 +66,16 @@ desired effect
     <!-- Logo -->
     <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Eq.</b> $_SESSION["no_equipe"]</span>
+      <span class="logo-mini"><b>Eq.</b> X</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Equipe</b> $_SESSION["no_equipe"]</span>
+      <span class="logo-lg"><b>Equipe</b> X</span>
     </a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" >
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+      <a data-toggle="push-menu" role="button">
+        <span class="sr-only" id="barre">Toggle navigation</span>
       </a>
       
       <!-- Navbar Right Menu -->
@@ -85,17 +85,17 @@ desired effect
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" style="float: right">
               <!-- The user image in the navbar-->
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image">
+              <span class="hidden-xs" align="right"><img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image"></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
                 <img src="../documents/logoAE.png" width="7%">
                 <p>
-                    $_SESSION["Prénom"] $_SESSION["nom"]
+                    Bénévole B
                 </p>
               </li>
               </li>
@@ -121,10 +121,8 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <!-- Optionally, you can add icons to the links -->
         <li><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
-        <li class="active"><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
-        <li><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
-        <li><a href="reperes.php"><i class="fa fa-file"></i> <span>CV des webmasters</span></a></li>
-		  <li><a href="deconnect.php"><i class="fa fa-circle"></i> <span>Déconnexion</span></a></li>
+        <li><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
+        <li class="active"><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
             <span class="pull-right-container">
@@ -147,14 +145,14 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1 style="padding-bottom:40px">
-        Planning de la journée
+        Liste des points de repère
       </h1>
 
         </select>
     </section>
 
     <!-- Main content -->
-    <section>
+    <section class="content container-fluid">
         <link rel="stylesheet" href="select_pts_repere.css">
         <div class="row">
             <div class="col-md-4 col-xs-12">
@@ -162,22 +160,161 @@ desired effect
                 <table class="table" data-toggle="table"  data-search="true" data-pagination="true"  data-page-size="3">
                     <thead>
                     <tr>
-                        <th data-field="col1" data-sortable="true">Horaires</th>
-                        <th data-field="col2" data-sortable="true">Point de repère</th>
-                        <th data-field="col3" data-sortable="true">Tache à effectuer</th>
+                        <th data-field="col1" data-sortable="true">Points de repère</th>
+                        <th data-field="col2" data-sortable="true">Coordonnées carte</th>
                     </tr>
                     </thead>
-						</thead>
-						<tbody>
-							<tr>
-								<td>08:00 - 10:00</td>
-								<td><b>IC</b></td>
-							<td>Veiller aux abords de piste</td>
-							</tr>
-						</tbody>
-					</table>
 
-    </section>
+                    <tbody>
+                    <tr>
+                        <td><a href="#ancre">AA</a></td>
+                        <td>7E</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">EV</a></td>
+                        <td>6F</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">HA</a></td>
+                        <td>5B</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">HB</td>
+                        <td>4B</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">IA</a></td>
+                        <td>7B</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">IB</a></td>
+                        <td>7C</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">IC</a></td>
+                        <td>7C</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">ID </a></td>
+                        <td>7D</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">IE</a></td>
+                        <td>7E</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">IF</a></td>
+                        <td>7F</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">IG</a></td>
+                        <td>7G</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">IH</a></td>
+                        <td>7J</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">NA</a></td>
+                        <td>4E</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">NB</a></td>
+                        <td>4D</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">NC</a></td>
+                        <td>5E</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">ND</a></td>
+                        <td>4E</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">NE</a></td>
+                        <td>4E</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">PZ</a></td>
+                        <td>5G</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">RA</a></td>
+                        <td>4F</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">RB</a></td>
+                        <td>5H</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">RC</a></td>
+                        <td>6I</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">RD</a></td>
+                        <td>6I</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">RE</a></td>
+                        <td>7N</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">RF</a></td>
+                        <td>2O</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">SA</a></td>
+                        <td>6F</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">SB</a></td>
+                        <td>6D</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">SC</a></td>
+                        <td>6C</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">SD</a></td>
+                        <td>6C</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">SE</a></td>
+                        <td>7C</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">SF</a></td>
+                        <td>6D</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">SG</a></td>
+                        <td>6E</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">VD</a></td>
+                        <td>7E</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">ZT</a></td>
+                        <td>7D</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#ancre">ZV</a></td>
+                        <td>7F</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12" >
+                    <b id="ancre">
+                <img src="../documents/Site_quadrille.png" width="100%">
+                    </b>
+                </div>
+            </div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

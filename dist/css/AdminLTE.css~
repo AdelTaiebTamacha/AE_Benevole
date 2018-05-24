@@ -348,7 +348,7 @@ a:focus {
 .content-header > .breadcrumb > li + li:before {
   content: '>\00a0';
 }
-@media (max-width: 991px) {
+@media {
   .content-header > .breadcrumb {
     position: relative;
     margin-top: 5px;
@@ -1078,21 +1078,17 @@ a:focus {
   border-bottom-left-radius: 4px;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
-  height: 175px;
-  padding: 10px;
+  height: 150px;
+  padding: 5px;
   text-align: center;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
   z-index: 5;
-  height: 90px;
-  width: 90px;
-  border: 3px solid;
-  border-color: transparent;
-  border-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
   z-index: 5;
-  color: #fff;
+  color: #c43034;
   color: rgba(255, 255, 255, 0.8);
   font-size: 17px;
   margin-top: 10px;
