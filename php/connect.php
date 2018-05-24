@@ -14,60 +14,98 @@ function connect_PDO($server, $name, $login, $password){
     return $conn;
 }
 
+function get_info($conn, $donnee) {
+	
+	
+	///////////////////////////////////////////   10:00 - 12:00 
+	echo $donnee["NumEquipe"]."</br>";
+	$sql_10 = "SELECT CoorLieu FROM CreneauHoraire WHERE HDebut = '10:00' AND IdEquipe = ".$donnee["NumEquipe"];
+    $result = $conn->query($sql_10)->fetch();
+	echo $result["CoorLieu"]."</br>";
+	$_SESSION['repere_10'] = $result["CoorLieu"];
+	
+    $sql_10 = "SELECT Tache FROM lieu WHERE CoorLieu LIKE "."'".$result["CoorLieu"]."'";
+    $tache_10 = $conn->query($sql_10)->fetch();
+	echo $tache_10["Tache"];
+	$_SESSION['tache_10'] = $tache_10["Tache"];
+	
+	///////////////////////////////////////////   12:00 - 14:00
+	$sql_12 = "SELECT CoorLieu FROM CreneauHoraire WHERE HDebut = '12:00' AND IdEquipe = ".$donnee["NumEquipe"];
+    $result = $conn->query($sql_12)->fetch();
+	echo $result["CoorLieu"]."</br>";
+	$_SESSION['repere_12'] = $result["CoorLieu"];
+	
+    $sql_12 = "SELECT Tache FROM lieu WHERE CoorLieu LIKE "."'".$result["CoorLieu"]."'";
+    $tache_12 = $conn->query($sql_12)->fetch();
+	echo $tache_12["Tache"];
+	$_SESSION['tache_12'] = $tache_12["Tache"];
+	
+	
+	///////////////////////////////////////////   14:00 - 16:00
+	$sql_14 = "SELECT CoorLieu FROM CreneauHoraire WHERE HDebut = '14:00' AND IdEquipe = ".$donnee["NumEquipe"];
+    $result = $conn->query($sql_14)->fetch();
+	echo $result["CoorLieu"]."</br>";
+	$_SESSION['repere_14'] = $result["CoorLieu"];
+	
+    $sql_14 = "SELECT Tache FROM lieu WHERE CoorLieu LIKE "."'".$result["CoorLieu"]."'";
+    $tache_14 = $conn->query($sql_14)->fetch();
+	echo $tache_14["Tache"];
+	$_SESSION['tache_14'] = $tache_14["Tache"];
+	
+	
+	///////////////////////////////////////////   16:00 - 18:00
+	$sql_16 = "SELECT CoorLieu FROM CreneauHoraire WHERE HDebut = '16:00' AND IdEquipe = ".$donnee["NumEquipe"];
+    $result = $conn->query($sql_16)->fetch();
+	echo $result["CoorLieu"]."</br>";
+	$_SESSION['repere_16'] = $result["CoorLieu"];
+	
+    $sql_16 = "SELECT Tache FROM lieu WHERE CoorLieu LIKE "."'".$result["CoorLieu"]."'";
+    $tache_16 = $conn->query($sql_16)->fetch();
+	echo $tache_16["Tache"];
+	$_SESSION['tache_16'] = $tache_16["Tache"];
 
+
+
+	
+	$_SESSION['prenom'] = $donnee["Prenom"];
+	$_SESSION['nom'] = $donnee["Nom"];
+	$_SESSION['NumEquipe'] = $donnee["NumEquipe"];
+
+}
+
+		
 function login($login,$password) {
+	
+	
+	if ($login == "'admin'" and $password == "admin"){
+		header('Location: admin.php');
+		echo "hello";
+	}
 
 	$BDD_server = "localhost";
-	$BDD_name = "essai";
+	$BDD_name = "benevole";
 	$BDD_login = "root";
-	$BDD_password = "root";
+	$BDD_password = "";
 	
     $conn = connect_PDO($BDD_server, $BDD_name, $BDD_login, $BDD_password);
-    $sql = "SELECT Nom, Prenom, Login, mdp, NumEquipe  FROM Benevole WHERE Login = ".$login;
-	//"SELECT nom, prenom, email, password FROM benevole";// WHERE login = ".$login;
+    // $sql = "SELECT Nom, Prenom, Login, mdp, NumEquipe  FROM Benevole";
+	$sql = "SELECT Nom, Prenom, Login, mdp, NumEquipe  FROM Benevole WHERE Login = ".$login;
 
-	
-	echo "connexion";
+
+	echo "connexion"."<br/>";
 
     try {
         $result = $conn->query($sql);
         $donnee = $result->fetch();
-        echo "<br/>".$donnee["Login"]." - ".$donnee["mdp"]."<br>";
-
+        echo $donnee["Login"]." - ".$donnee["mdp"]."<br>";
     }
-
-
     catch(Exception $e) {
         echo "Erreur !: " . $e->getMessage() . "<br/>";
     }
 
-    $sql2 = "SELECT CoorLieu FROM CreneauHoraire WHERE HDebut = '10:00' AND IdEquipe = ".$donnee["NumEquipe"];
-    $coorlieu_result10 = $conn->query($sql2);
-    echo $coorlieu_result10;
-    $sql2_1 = "SELECT Tache FROM lieu WHERE CoorLieu =".$coorlieu_result10;
-    $tache_result10 = $conn->query($sql2_1);
-
-
-    $sql3 = "SELECT CoorLieu FROM creneauhoraire WHERE HDebut = '12:00' AND IdEquipe = ".$donnee["NumEquipe"];
-    $coorlieu_result12 = $conn->query($sql3);
-    $sql3_1 = "SELECT Tache FROM lieu WHERE CoorLieu =".$coorlieu_result12;
-    $tache_result12 = $conn->query($sql3_1);
-
-    $sql4 = "SELECT CoorLieu FROM creneauhoraire WHERE HDebut = '14:00' AND IdEquipe = ".$donnee["NumEquipe"];
-    $coorlieu_result14 = $conn->query($sql4);
-    $sql4_1 = "SELECT Tache FROM lieu WHERE CoorLieu =".$coorlieu_result14;
-    $tache_result14 = $conn->query($sql4_1);
-
-    $sql5 = "SELECT CoorLieu FROM creneauhoraire WHERE HDebut = '16:00' AND IdEquipe = ".$donnee["NumEquipe"];
-    $coorlieu_result16 = $conn->query($sql5);
-    $sql5_1 = "SELECT Tache FROM lieu WHERE CoorLieu =".$coorlieu_result16;
-    $tache_result16 = $conn->query($sql5_1);
-
-
-
-    echo "requete";
+	echo "requete"."<br/>";
 	
-    if (empty($donnee["login"])) {
+    if (empty($donnee["Login"])) {
         echo "login errone".'<br/>';
         echo '<a href="login.php">'."Essayer de se reconnecter".'</a>';
 
@@ -79,20 +117,7 @@ function login($login,$password) {
 
             // On démarre la session AVANT d'écrire du code HTML
             session_start();
-            // On s'amuse à créer quelques variables de session dans $_SESSION
-            $_SESSION['prenom'] = $donnee["Prenom"];
-            $_SESSION['nom'] = $donnee["Nom"];
-            $_SESSION['equipe'] = $donnee["NumEquipe"];
-            $_SESSION['repere_10'] = $coorlieu_result10;
-            $_SESSION['repere_12'] = $coorlieu_result12;
-            $_SESSION['repere_14'] = $coorlieu_result14;
-            $_SESSION['repere_16'] = $coorlieu_result16;
-            $_SESSION['tache_10'] = $tache_result10;
-            $_SESSION['tache_12'] = $tache_result12;
-            $_SESSION['tache_14'] = $tache_result14;
-            $_SESSION['tache_16'] = $tache_result16;
-
-
+			get_info($conn, $donnee);
 
             header('Location: map.php');
         }
@@ -100,12 +125,13 @@ function login($login,$password) {
             echo "mdp errone".'<br/>';
             echo '<a href="login.php">'."Essayer de se reconnecter".'</a>';
         }
-
     }
+  
+    
 }
 
 login("'".$_POST["login"]."'", $_POST["password"]);
-
+// login("'gui'", "ae18");
 
 ?>
 

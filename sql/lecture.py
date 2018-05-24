@@ -1,5 +1,6 @@
 import xlrd
 import datetime
+import os
 import mysql.connector
 
 config = {
@@ -226,7 +227,30 @@ def insertEquipeCovoit (IdEquipeCovoit, HDep, LieuDep):
 #
 #
 ################################################################################
-    
+   
+   
+def para_form(para):
+	s = '", "'
+	para = [str(ele) for ele in para]
+	
+	para2 = '("' + para[0]
+	for ele in para[1:]:
+		para2+= s + ele
+	para2+= '")'
+	print(para2)
+
+
+	return para2
+	
+def file_ender(file):
+	file.seek(file.tell()-3, 0)
+	file.truncate()
+	file.write(";")
+
+
+
+	
+	
 def insert_benevole_file(l):
     
     n = len(l)
@@ -269,13 +293,13 @@ def insert_benevole_file(l):
             for ele in para[1:]:
                 para2+= s + ele
             para2+= '")'
-            # print(para2)
+            print(para2)
             
             
             #Write in the file
                 
             file.write(para2 + ",\n")
-        file.write(";")
+        file_ender(file)
 
 def insertEquipe_file(table):
     
@@ -296,16 +320,10 @@ def insertEquipe_file(table):
                 Lieu = ""
                 para = [IdEquipe, IdResponsable, Lieu]
                 
-                s = '", "'
-                para = [str(ele) for ele in para]
-                
-                para2 = '("' + para[0]
-                for ele in para[1:]:
-                    para2+= s + ele
-                para2+= '")'
-                print(para2)
+                para2 = para_form(para)
             
-                file.write(para2 + ",\n")        
+                file.write(para2 + ",\n") 
+        file_ender(file)
 
                 
 def insertVoiture_file(table):
@@ -327,16 +345,10 @@ def insertVoiture_file(table):
         
                 para = [Plaque, NbPlace, IdBenevole, IdEquipeCovoit]
                 
-                s = '", "'
-                para = [str(ele) for ele in para]
-                
-                para2 = '("' + para[0]
-                for ele in para[1:]:
-                    para2+= s + ele
-                para2+= '")'
-                print(para2)
-            
+                para2 = para_form(para)            
                 file.write(para2 + ",\n")
+				
+        file_ender(file)
 
 
 
@@ -359,16 +371,10 @@ def insertLieu_file(table):
                 Tache = table[i][3]
                 para = [CoorLieu, Nom, Tache]
                 
-                s = '", "'
-                para = [str(ele) for ele in para]
-                
-                para2 = '("' + para[0]
-                for ele in para[1:]:
-                    para2+= s + ele
-                para2+= '")'
-                print(para2)
-            
-                file.write(para2 + ",\n")        
+                para2 = para_form(para)            
+                file.write(para2 + ",\n")
+				
+        file_ender(file)
 
                 
 def insertCreneauHoraire_file(table):
@@ -378,10 +384,7 @@ def insertCreneauHoraire_file(table):
     
     with open (request_file_path,'a') as file:
         file.write("INSERT INTO CreneauHoraire (IdEquipe, CoorLieu, HDebut, HFin) VALUES\n")
-        
-        
-        
-        
+               
         for i in range(len(table)):
             print(table[i])
             
@@ -393,16 +396,10 @@ def insertCreneauHoraire_file(table):
                 HFin = creneau[j+1]
                 para = [IdEquipe, CoorLieu, HDebut, HFin]
                 
-                s = '", "'
-                para = [str(ele) for ele in para]
+                para2 = para_form(para)            
+                file.write(para2 + ",\n")
                 
-                para2 = '("' + para[0]
-                for ele in para[1:]:
-                    para2+= s + ele
-                para2+= '")'
-                print(para2)
-            
-                file.write(para2 + ",\n")  
+        file_ender(file)
 
                 
 def insertResponsable_file(table):
@@ -422,7 +419,8 @@ def insertResponsable_file(table):
                 para2 = '("' + IdResponsable + '")'
                 print(para2)
             
-                file.write(para2 + ",\n") 
+                file.write(para2 + ",\n")
+        file_ender(file)
                 
 
 def insertMateriel_file(table):
@@ -445,17 +443,11 @@ def insertMateriel_file(table):
                 
                 para = [Numero, IdResponsable]
                 
-                s = '", "'
-                para = [str(ele) for ele in para]
-                
-                para2 = '("' + para[0]
-                for ele in para[1:]:
-                    para2+= s + ele
-                para2+= '")'
-                print(para2)
-            
+                para2 = para_form(para)            
                 file.write(para2 + ",\n") 
                 counter+=1
+                
+        file_ender(file)
 
 
 

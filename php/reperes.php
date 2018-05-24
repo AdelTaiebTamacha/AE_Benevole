@@ -57,7 +57,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-red sidebar-mini">
+<body class="sidebar-collapse skin-red sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -66,48 +66,17 @@ desired effect
     <!-- Logo -->
     <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Eq.</b> X</span>
+      <span class="logo-mini"><b>Eq.</b> <?php echo $_SESSION["NumEquipe"]; ?></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Equipe</b> X</span>
+      <span class="logo-lg"><b>Equipe</b> <?php echo $_SESSION["NumEquipe"]; ?></span>
     </a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" >
       <!-- Sidebar toggle button-->
-      <a data-toggle="push-menu" role="button">
-        <span class="sr-only" id="barre">Toggle navigation</span>
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
       </a>
-      
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a class="dropdown-toggle" data-toggle="dropdown" style="float: right">
-              <!-- The user image in the navbar-->
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs" align="right"><img src="../documents/logoAE.png" class="button" align="right" width="4%" alt="User Image"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                <img src="../documents/logoAE.png" width="7%">
-                <p>
-                    Bénévole B
-                </p>
-              </li>
-              </li>
-              <!-- Menu Footer-->
-                <div class="pull-center">
-                  <a href="deconnect.php" class="btn btn-default btn-flat" align="center">Déconnexion</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
     </nav>
   </header>
   
@@ -123,17 +92,22 @@ desired effect
         <li><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
         <li class="active"><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
-            <span class="pull-right-container">
+        <li><a href="infos.php"><i class="fa fa-bell"></i> <span>Informations diverses</span></a></li>
+                <li class="treeview">
+                    <a href="../infos.php"><i class="fa fa-file"></i> <span>Informations</span>
+                        <span class="pull-right-container">
             	<i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Programmation avions</a></li>
-            <li><a href="#">En direct</a></li>
-          </ul>
-        </li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="../template_cv/cv_adel.html">Adel Taieb Tamacha</a></li>
+                        <li><a href="../template_cv/cv_tanguy.html">Tanguy Lopez</a></li>
+                        <li><a href="../template_cv/cv_camille.html">Camille Delloye</a></li>
+                        <li><a href="../template_cv/cv_mathilde.html">Mathilde Merland</a></li>
+                        <li><a href="../php/video.php">Video tutoriel</a></li>
+                    </ul>
+                </li>     
+		  <li><a href="deconnect.php"><i class="fa fa-circle"></i> <span>Déconnexion</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -167,141 +141,141 @@ desired effect
 
                     <tbody>
                     <tr>
-                        <td><a href="#ancre">AA</a></td>
-                        <td>7E</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">EV</a></td>
-                        <td>6F</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">HA</a></td>
-                        <td>5B</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">HB</td>
-                        <td>4B</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">IA</a></td>
-                        <td>7B</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">IB</a></td>
-                        <td>7C</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">IC</a></td>
-                        <td>7C</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">ID </a></td>
-                        <td>7D</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">IE</a></td>
-                        <td>7E</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">IF</a></td>
-                        <td>7F</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">IG</a></td>
-                        <td>7G</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">IH</a></td>
-                        <td>7J</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">NA</a></td>
-                        <td>4E</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">NB</a></td>
-                        <td>4D</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">NC</a></td>
-                        <td>5E</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">ND</a></td>
-                        <td>4E</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">NE</a></td>
-                        <td>4E</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">PZ</a></td>
-                        <td>5G</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">RA</a></td>
-                        <td>4F</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">RB</a></td>
-                        <td>5H</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">RC</a></td>
-                        <td>6I</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">RD</a></td>
-                        <td>6I</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">RE</a></td>
-                        <td>7N</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">RF</a></td>
-                        <td>2O</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">SA</a></td>
-                        <td>6F</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">SB</a></td>
-                        <td>6D</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">SC</a></td>
-                        <td>6C</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">SD</a></td>
-                        <td>6C</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">SE</a></td>
-                        <td>7C</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">SF</a></td>
-                        <td>6D</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">SG</a></td>
-                        <td>6E</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">VD</a></td>
-                        <td>7E</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">ZT</a></td>
-                        <td>7D</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#ancre">ZV</a></td>
-                        <td>7F</td>
-                    </tr>
+						<td>AA</td>
+						<td><a href="#ancre">7E</a></td>
+					</tr>
+					<tr>
+						<td>EV</td>
+						<td><a href="#ancre">6F</a></td>
+					</tr>
+					<tr>
+						<td>HA</td>
+						<td><a href="#ancre">5B</a></td>
+					</tr>
+					<tr>
+						<td>HB</a></td>
+						<td><a href="#ancre">4B</a></td>
+					</tr>
+					<tr>
+						<td>IA</td>
+						<td><a href="#ancre">7B</a></td>
+					</tr>
+					<tr>
+						<td>IB</td>
+						<td><a href="#ancre">7C</a></td>
+					</tr>
+					<tr>
+						<td>IC</td>
+						<td><a href="#ancre">7C</a></td>
+					</tr>
+					<tr>
+						<td>ID </td>
+						<td><a href="#ancre">7D</a></td>
+					</tr>
+					<tr>
+						<td>IE</td>
+						<td><a href="#ancre">7E</a></td>
+					</tr>
+					<tr>
+						<td>IF</td>
+						<td><a href="#ancre">7F</a></td>
+					</tr>
+					<tr>
+						<td>IG</td>
+						<td><a href="#ancre">7G</a></td>
+					</tr>
+					<tr>
+						<td>IH</td>
+						<td><a href="#ancre">7J</a></td>
+					</tr>
+					<tr>
+						<td>NA</td>
+						<td><a href="#ancre">4E</a></td>
+					</tr>
+					<tr>
+						<td>NB</td>
+						<td><a href="#ancre">4D</a></td>
+					</tr>
+					<tr>
+						<td>NC</td>
+						<td><a href="#ancre">5E</a></td>
+					</tr>
+					<tr>
+						<td>ND</td>
+						<td><a href="#ancre">4E</a></td>
+					</tr>
+					<tr>
+						<td>NE</td>
+						<td><a href="#ancre">4E</a></td>
+					</tr>
+					<tr>
+						<td>PZ</td>
+						<td><a href="#ancre">5G</a></td>
+					</tr>
+					<tr>
+						<td>RA</td>
+						<td><a href="#ancre">4F</a></td>
+					</tr>
+					<tr>
+						<td>RB</td>
+						<td><a href="#ancre">5H</a></td>
+					</tr>
+					<tr>
+						<td>RC</td>
+						<td><a href="#ancre">6I</a></td>
+					</tr>
+					<tr>
+						<td>RD</td>
+						<td><a href="#ancre">6I</a></td>
+					</tr>
+					<tr>
+						<td>RE</td>
+						<td><a href="#ancre">7N</a></td>
+					</tr>
+					<tr>
+						<td>RF</td>
+						<td><a href="#ancre">2O</a></td>
+					</tr>
+					<tr>
+						<td>SA</td>
+						<td><a href="#ancre">6F</a></td>
+					</tr>
+					<tr>
+						<td>SB</td>
+						<td><a href="#ancre">6D</a></td>
+					</tr>
+					<tr>
+						<td>SC</td>
+						<td><a href="#ancre">6C</a></td>
+					</tr>
+					<tr>
+						<td>SD</td>
+						<td><a href="#ancre">6C</a></td>
+					</tr>
+					<tr>
+						<td>SE</td>
+						<td><a href="#ancre">7C</a></td>
+					</tr>
+					<tr>
+						<td>SF</td>
+						<td><a href="#ancre">6D</a></td>
+					</tr>
+					<tr>
+						<td>SG</td>
+						<td><a href="#ancre">6E</a></td>
+					</tr>
+					<tr>
+						<td>VD</td>
+						<td><a href="#ancre">7E</a></td>
+					</tr>
+					<tr>
+						<td>ZT</td>
+						<td><a href="#ancre">7D</a></td>
+					</tr>
+					<tr>
+						<td>ZV</td>
+						<td><a href="#ancre">7F</a></td>
+					</tr>
                     </tbody>
                 </table>
             </section>

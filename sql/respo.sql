@@ -22,4 +22,4 @@ INSERT INTO Responsable (IdResponsable) VALUES
 ("67"),
 ("70"),
 ("73"),
-("76"),
+("76");

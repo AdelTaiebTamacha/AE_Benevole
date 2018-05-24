@@ -57,7 +57,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-red sidebar-mini">
+<body class="sidebar-collapse skin-red sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -66,9 +66,9 @@ desired effect
     <!-- Logo -->
     <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Eq.</b> $_SESSION["no_equipe"]</span>
+      <span class="logo-mini"><b>Eq.</b> <?php echo $_SESSION["NumEquipe"]; ?></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Equipe</b> $_SESSION["no_equipe"]</span>
+      <span class="logo-lg"><b>Equipe</b> <?php echo $_SESSION["NumEquipe"]; ?></span>
     </a>
 
     <!-- Header Navbar -->
@@ -92,19 +92,22 @@ desired effect
         <li><a href="map.php"><i class="fa fa-map"></i> <span>Carte</span></a></li>
         <li class="active"><a href="planning.php"><i class="fa fa-calendar"></i> <span>Planning</span></a></li>
         <li><a href="reperes.php"><i class="fa fa-flag"></i> <span>Points de repère</span></a></li>
-        <li><a href="reperes.php"><i class="fa fa-file"></i> <span>CV des webmasters</span></a></li>
-		  <li><a href="deconnect.php"><i class="fa fa-circle"></i> <span>Déconnexion</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-bell"></i> <span>Actualités</span>
-            <span class="pull-right-container">
+        <li><a href="infos.php"><i class="fa fa-bell"></i> <span>Informations diverses</span></a></li>
+                <li class="treeview">
+                    <a href="../infos.php"><i class="fa fa-file"></i> <span>Informations</span>
+                        <span class="pull-right-container">
             	<i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Programmation avions</a></li>
-            <li><a href="#">En direct</a></li>
-          </ul>
-        </li>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="../template_cv/cv_adel.html">Adel Taieb Tamacha</a></li>
+                        <li><a href="../template_cv/cv_tanguy.html">Tanguy Lopez</a></li>
+                        <li><a href="../template_cv/cv_camille.html">Camille Delloye</a></li>
+                        <li><a href="../template_cv/cv_mathilde.html">Mathilde Merland</a></li>
+                        <li><a href="../php/video.php">Video tutoriel</a></li>
+                    </ul>
+                </li>     
+		  <li><a href="deconnect.php"><i class="fa fa-circle"></i> <span>Déconnexion</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -123,19 +126,15 @@ desired effect
     </section>
 
     <!-- Main content -->
-     <section>
-        <link rel="stylesheet" href="select_pts_repere.css">
-        <div class="row">
-            <div class="col-md-4 col-xs-12">
-            <section id="reperes">
-                <table class="table" data-toggle="table"  data-search="true" data-pagination="true"  data-page-size="3">
-                    <thead>
-                    <tr>
-                        <th data-field="col1" data-sortable="true">Horaires</th>
-                        <th data-field="col2" data-sortable="true">Point de repère</th>
-                        <th data-field="col3" data-sortable="true">Tache à effectuer</th>
-                    </tr>
-                    </thead>
+    <section>
+    		<link rel="stylesheet" href="planning_look.css">
+                <table style="border-spacing: 10px 15px">
+    					<thead>
+    						<tr>
+								<td><strong>Horaires</strong></td>
+								<td><strong>Point de repère</strong></td>
+								<td><strong>Tache à effectuer</strong></td>
+							</tr>
 						</thead>
 						<tbody>
 
@@ -174,7 +173,7 @@ desired effect
       <a href="http://airexpo.org/">Airexpo</a>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="http://airexpo.org">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2018 <a href="http://airexpo.org">Airexpo</a>.</strong> All rights reserved.
   </footer>
 
 </div>
