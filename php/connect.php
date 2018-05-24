@@ -20,7 +20,7 @@ function login($login,$password) {
 	$BDD_server = "localhost";
 	$BDD_name = "benevole_test";
 	$BDD_login = "root";
-	$BDD_password = "";
+	$BDD_password = "root";
 	
     $conn = connect_PDO($BDD_server, $BDD_name, $BDD_login, $BDD_password);
     $sql = "SELECT nom, prenom, login, mdp FROM benevole WHERE login = ".$login;
