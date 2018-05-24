@@ -3,6 +3,7 @@
 <?php
 
 
+
 function connect_PDO($server, $name, $login, $password){
     try{
 
@@ -106,6 +107,12 @@ function login($login,$password) {
 	echo "requete"."<br/>";
 	
     if (empty($donnee["Login"])) {
+		
+		session_start();
+		$_SESSION["login_err"] = "block";
+		$_SESSION["pass_err"] = "none";
+		header('Location: login.php');
+		
         echo "login errone".'<br/>';
         echo '<a href="login.php">'."Essayer de se reconnecter".'</a>';
 
@@ -122,6 +129,10 @@ function login($login,$password) {
             header('Location: map.php');
         }
         else{
+			session_start();
+			$_SESSION["login_err"] = "none";
+			$_SESSION["pass_err"] = "block";
+			header('Location: login.php');
             echo "mdp errone".'<br/>';
             echo '<a href="login.php">'."Essayer de se reconnecter".'</a>';
         }

@@ -21,6 +21,26 @@
     <body class="hold-transition login-page">
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
+			<?php 
+				
+				session_start();
+				//echo $_SESSION["login_err"];
+				//echo $_SESSION["pass_err"];
+				
+				$login_err = "none";
+				$pass_err = "none";
+			
+				if (isset($_SESSION["login_err"])){
+					$login_err = $_SESSION["login_err"];
+				}
+				if (isset($_SESSION["pass_err"])){
+					$pass_err = $_SESSION["pass_err"];
+				}
+				session_destroy();
+				echo '<p class="login-box-msg" style= "display :'.$login_err.'">Login erroné</p>';
+				echo '<p class="login-box-msg" style= "display :'.$pass_err.'">Password erroné</p>';
+			?>
+			 
             <form method="post" action="connect.php">
                 <div class="form-group has-feedback">
                     <input type="text" name="login" value="mail">
@@ -38,12 +58,8 @@
                             </label>
                         </div>
                     </div>
-                    <!-- /.col -->
-<!--                    <div class="col-xs-4">-->
-<!--                        <button type="submit" class="btn">Sign In</button>-->
-<!--<!--                        btn-primary btn-block btn-flat-->
-<!--                    </div>-->
-                    <!-- /.col -->
+					
+                   
                 </div>
             </form>
 

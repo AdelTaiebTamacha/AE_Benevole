@@ -19,32 +19,25 @@ CREATE TABLE IF NOT EXISTS Benevole(
 	Preference int,
 	NumEquipe int,
 	IdEquipeCovoit int,
-	PRIMARY KEY(IdBenevole),
-	FOREIGN KEY(NumEquipe) REFERENCES Equipe(IdEquipe) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY(IdBenevole) REFERENCES Preference(IdBenevole) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY(IdEquipeCovoit) REFERENCES EquipeCovoit(IdEquipeCovoit) ON DELETE CASCADE ON UPDATE CASCADE)
+	PRIMARY KEY(IdBenevole))
 ;
 
 CREATE TABLE IF NOT EXISTS Responsable(
 	IdResponsable int,
-	PRIMARY KEY(IdResponsable),
-	FOREIGN KEY(IdResponsable) REFERENCES Benevole(IdBenevole) ON DELETE CASCADE ON UPDATE CASCADE)
+	PRIMARY KEY(IdResponsable))
 ;
 
 CREATE TABLE IF NOT EXISTS Materiel(
 	Numero int,
 	IdResponsable int,
-	PRIMARY KEY(Numero),
-	FOREIGN KEY(IdResponsable) REFERENCES Responsable(IdResponsable) ON DELETE CASCADE ON UPDATE CASCADE)
+	PRIMARY KEY(Numero))
 ;
 
 CREATE TABLE IF NOT EXISTS Equipe(
 	IdEquipe int,
 	IdResponsable int,
 	CoorLieu varchar(50),
-	PRIMARY KEY(IdEquipe),
-	FOREIGN KEY(IdResponsable) REFERENCES Responsable(IdResponsable) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY(CoorLieu) REFERENCES Lieu(CoorLieu) ON DELETE CASCADE ON UPDATE CASCADE)
+	PRIMARY KEY(IdEquipe))
 ;
 
 CREATE TABLE IF NOT EXISTS Lieu(
@@ -59,9 +52,7 @@ CREATE TABLE IF NOT EXISTS CreneauHoraire(
 	CoorLieu varchar(20),
 	HDebut varchar(20),
 	HFin varchar(20),
-	PRIMARY KEY(IdEquipe, CoorLieu),
-	FOREIGN KEY(IdEquipe) REFERENCES Equipe(IdEquipe) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY(CoorLieu) REFERENCES Lieu(CoorLieu) ON DELETE CASCADE ON UPDATE CASCADE)
+	PRIMARY KEY(IdEquipe, CoorLieu))
 ;
 
 CREATE TABLE IF NOT EXISTS Voiture(
@@ -69,9 +60,7 @@ CREATE TABLE IF NOT EXISTS Voiture(
 	NbPlace int,
 	IdBenevole int,
 	IdEquipeCovoit int,
-	PRIMARY KEY(Plaque),
-	FOREIGN KEY(IdBenevole) REFERENCES Benevole(IdBenevole) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY(IdEquipeCovoit) REFERENCES EquipeCovoit(IdEquipeCovoit) ON DELETE CASCADE ON UPDATE CASCADE)
+	PRIMARY KEY(Plaque))
 ;
 
 CREATE TABLE IF NOT EXISTS EquipeCovoit(
