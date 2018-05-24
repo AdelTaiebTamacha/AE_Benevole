@@ -1,5 +1,4 @@
 INSERT INTO CreneauHoraire (IdEquipe, CoorLieu, HDebut, HFin) VALUES
-
 ("1", "HB", "10:00", "12:00"),
 ("2", "HB", "12:00", "14:00"),
 ("3", "HB", "14:00", "16:00"),

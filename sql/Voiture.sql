@@ -25,7 +25,6 @@ INSERT INTO Voiture (Plaque, NbPlace, IdBenevole, IdEquipeCovoit) VALUES
 ("DX-384-XN", "5", "62", "25"),
 ("CK-041-GG", "5", "66", "26"),
 ("DM-130-MY", "5", "68", "27"),
-("DM-130-MY", "5", "69", "28"),
 ("By 213 dr", "5", "70", "29"),
 ("EC-020-MT", "5", "71", "30"),
 ("EE-043-NT", "5", "74", "31"),
